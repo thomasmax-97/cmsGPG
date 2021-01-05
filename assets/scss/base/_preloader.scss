@@ -1,0 +1,126 @@
+.preloader {
+
+	svg {
+		fill: $secondary;
+	}
+
+	&-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		background-color: $dark;
+		z-index: 999999;
+		transform: translateY(100%);
+		transition: .7s 0.55s all cubic-bezier(0.86, 0, 0.07, 1);
+		min-height: 180px; // size of arcade + paddings
+
+		.preloader-is--active & {
+			transform: translateY(0);
+		}
+	}
+
+	&-inner {
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		animation-name: fadeInUp;
+	}
+}
+
+.pong-loader {
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: 36.5%;
+	height: 20px;
+	width: 3px;
+	background-color: transparent;
+	animation: paddles 0.75s ease-out infinite;
+	transform: translate3d(0,0,0);
+
+	&::before {
+		content: "";
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: 7.5px;
+		width: 5px;
+		height: 5px;
+		background-color: $primary;
+		border-radius: 50%;
+		animation: ballbounce 0.6s ease-out infinite;
+	}
+}
+
+// Keyframes
+
+@keyframes paddles {
+	0% {
+		box-shadow: -12.5px -5px 0px $light, 12.5px 5px 0px $light;
+	}
+
+	50% {
+		box-shadow: -12.5px 8px 0px $light, 12.5px -5px 0px $light;
+	}
+
+	100% {
+		box-shadow: -12.5px -5px 0px $light, 12.5px 5px 0px $light;
+	}
+}
+
+@keyframes ballbounce {
+	0%{
+		transform: translateX(-10px) scale(1,1.2);
+	}
+
+	25%{
+		transform: scale(1.2,1);
+	}
+
+	50% {
+		transform: translateX(7.5px) scale(1,1.2);
+	}
+
+	75% {
+		transform: scale(1.2,1);
+	}
+
+	100% {
+		transform: translateX(-10px);
+	}
+}
+
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity:0;
+		-webkit-transform:translate3d(0, 30px, 0);
+		transform:translate3d(0, 30px, 0)
+	}
+
+	to {
+		opacity:1;
+		-webkit-transform:translate3d(0, 0, 0);
+		transform:translate3d(0, 0, 0)
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity:0;
+		-webkit-transform:translate3d(0, 100%, 0);
+		transform:translate3d(0, 30px, 0)
+	}
+
+	to {
+		opacity:1;
+		-webkit-transform:translate3d(0, 0, 0);
+		transform:translate3d(0, 0, 0)
+	}
+}

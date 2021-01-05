@@ -1,0 +1,362 @@
+//- Decorations
+//- ----------------------------------------------
+
+// Decoration
+.ncr-decor {
+	display: block;
+	position: relative;
+	width: 434px;
+	height: 386px;
+}
+	.ncr-decor--reverse {
+		transform: scaleX(-1);
+	}
+	.ncr-decor__layer-bg {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		transform: skew(-20deg);
+		background-image: url("../img/hexagon-bg.png");
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		mix-blend-mode: overlay;
+	}
+	.ncr-decor__layer-1 {
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		background-color: $decor-layer-1-bg;
+		background-image: linear-gradient($decor-layer-1-gradient-start, $decor-layer-1-gradient-stop);
+		width: 53%;
+		height: 40%;
+		transform: skew(20deg);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 15%;
+			top: 0;
+			width: 85%;
+			bottom: 0;
+			background-color: rgba(0,0,0,.2);
+			mix-blend-mode: overlay;
+		}
+	}
+	.ncr-decor__layer-2 {
+		display: block;
+		position: absolute;
+		left: 5%;
+		bottom: 0;
+		background-color: $decor-layer-2-bg;
+		background-image: linear-gradient($decor-layer-2-gradient-start, $decor-layer-2-gradient-stop);
+		width: 53%;
+		height: 100%;
+		transform: skew(20deg);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 28%;
+			background-color: rgba(255,255,255,.4);
+			mix-blend-mode: overlay;
+			border-left: 2px solid rgba(255,255,255,.3);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 15%;
+			right: 0;
+			bottom: 0;
+			top: 25%;
+			background-color: rgba(0,0,0,.2);
+			mix-blend-mode: overlay;
+		}
+	}
+	.ncr-decor__layer-3 {
+		display: block;
+		position: absolute;
+		left: 24%;
+		bottom: 0;
+		top: 29%;
+		background-color: $decor-layer-3-bg;
+		background-image: linear-gradient($decor-layer-3-gradient-start, $decor-layer-3-gradient-stop);
+		width: 53%;
+		transform: skew(20deg);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 30%;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			background-color: rgba(255,255,255,.4);
+			mix-blend-mode: overlay;
+			border-left: 2px solid rgba(255,255,255,.6);
+		}
+	}
+	.ncr-decor__layer-4 {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 10%;
+		width: 2px;
+		height: 72%;
+		background-color: $decor-line;
+		transform: skew(20deg);
+	}
+	.ncr-decor__layer-5 {
+		display: block;
+		position: absolute;
+		left: 25.5%;
+		bottom: 0;
+		width: 2px;
+		height: 42%;
+		background-color: $decor-line;
+		transform: skew(20deg);
+	}
+
+
+// Page Decor
+.ncr-page-decor {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+	.ncr-page-decor__layer-bg {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: -50%;
+		transform: skew(20deg);
+		background-image: url("../img/hexagon-bg.png");
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		mix-blend-mode: overlay;
+	}
+	.ncr-page-decor__layer-1 {
+		display: block;
+		position: absolute;
+		left: 53%;
+		bottom: 0;
+		background-color: $decor-page-layer-1-bg;
+		background-image: linear-gradient($decor-page-layer-1-gradient-start, $decor-page-layer-1-gradient-stop);
+		width: 49%;
+		height: 73%;
+		transform: skew(-20deg) translateX(-50%);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 9%;
+			top: 0;
+			width: 91%;
+			bottom: 0;
+			background-color: rgba(0,0,0,.2);
+			mix-blend-mode: overlay;
+		}
+
+		.ncr-page-decor__layer-bg {
+			top: -20%;
+			right: -60%;
+		}
+	}
+
+	.ncr-page-decor__layer-2 {
+		display: block;
+		position: absolute;
+		left: 43%;
+		bottom: 0;
+		background-color: $decor-page-layer-2-bg;
+		background-image: linear-gradient($decor-page-layer-2-gradient-start, $decor-page-layer-2-gradient-stop);
+		width: 49%;
+		height: 65%;
+		transform: skew(-20deg) translateX(-50%);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 11%;
+			top: 0;
+			width: 89%;
+			bottom: 0;
+			background-color: rgba(0,0,0,.2);
+			mix-blend-mode: overlay;
+		}
+	}
+
+	.ncr-page-decor__layer-3 {
+		display: block;
+		position: absolute;
+		left: 55%;
+		bottom: 0;
+		background-color: $decor-page-layer-3-bg;
+		background-image: linear-gradient($decor-page-layer-3-gradient-start, $decor-page-layer-3-gradient-stop);
+		width: 42%;
+		height: 100%;
+		transform: skew(-20deg) translateX(-50%);
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			right: 50%;
+			top: 0;
+			width: 50%;
+			bottom: 0;
+			background-color: rgba(255,255,255,.4);
+			mix-blend-mode: overlay;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 2px;
+			height: 25%;
+			background-color: $decor-page-line;
+		}
+	}
+
+	.ncr-page-decor__layer-4 {
+		display: block;
+		position: absolute;
+		left: 89%;
+		top: 4%;
+		width: 2px;
+		height: 42%;
+		background-color: $decor-page-line;
+		transform: skew(-20deg) translateX(-50%);
+	}
+
+	.ncr-page-decor__layer-5 {
+		display: block;
+		position: absolute;
+		left: 11%;
+		bottom: 0;
+		width: 2px;
+		height: 42%;
+		background-color: $decor-page-line;
+		transform: skew(-20deg) translateX(-50%);
+	}
+
+	.ncr-page-decor__layer-6 {
+		position: absolute;
+		overflow: hidden;
+		left: 0;
+		bottom: 13%;
+		width: 58%;
+		height: 120px;
+		opacity: .7;
+		background-color: transparent;
+		background-image: radial-gradient(#fff 1px, transparent 1px);
+		background-position: 0 0;
+		background-size: 32px 32px;
+		mix-blend-mode: overlay;
+		clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+		transition-delay: 1s;
+		transition: clip-path 2s ease-in-out;
+
+		.scroll-is--active & {
+			clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
+		}
+	}
+
+.ncr-page-decor--color-2 {
+
+	.ncr-page-decor__layer-1 {
+		background-color: $decor-page-color-2-layer-1-bg;
+		background-image: linear-gradient($decor-page-color-2-layer-1-gradient-start, $decor-page-color-2-layer-1-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-2 {
+		background-color: $decor-page-color-2-layer-2-bg;
+		background-image: linear-gradient($decor-page-color-2-layer-2-gradient-start, $decor-page-color-2-layer-2-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-3 {
+		background-color: $decor-page-color-2-layer-3-bg;
+		background-image: linear-gradient($decor-page-color-2-layer-3-gradient-start, $decor-page-color-2-layer-3-gradient-stop);
+	}
+}
+
+.ncr-page-decor--color-3 {
+
+	.ncr-page-decor__layer-1 {
+		background-color: $decor-page-color-3-layer-1-bg;
+		background-image: linear-gradient($decor-page-color-3-layer-1-gradient-start, $decor-page-color-3-layer-1-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-2 {
+		background-color: $decor-page-color-3-layer-2-bg;
+		background-image: linear-gradient($decor-page-color-3-layer-2-gradient-start, $decor-page-color-3-layer-2-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-3 {
+		background-color: $decor-page-color-3-layer-3-bg;
+		background-image: linear-gradient($decor-page-color-3-layer-3-gradient-start, $decor-page-color-3-layer-2-gradient-stop);
+	}
+}
+
+.ncr-page-decor--color-4 {
+
+	.ncr-page-decor__layer-1 {
+		background-color: $decor-page-color-4-layer-1-bg;
+		background-image: linear-gradient($decor-page-color-4-layer-1-gradient-start, $decor-page-color-4-layer-1-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-2 {
+		background-color: $decor-page-color-4-layer-2-bg;
+		background-image: linear-gradient($decor-page-color-4-layer-2-gradient-start, $decor-page-color-4-layer-2-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-3 {
+		background-color: $decor-page-color-4-layer-3-bg;
+		background-image: linear-gradient($decor-page-color-4-layer-3-gradient-start, $decor-page-color-4-layer-3-gradient-stop);
+	}
+}
+
+.ncr-page-decor--color-5 {
+
+	.ncr-page-decor__layer-1 {
+		background-color: $decor-page-color-5-layer-1-bg;
+		background-image: linear-gradient($decor-page-color-5-layer-1-gradient-start, $decor-page-color-5-layer-1-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-2 {
+		background-color: $decor-page-color-5-layer-2-bg;
+		background-image: linear-gradient($decor-page-color-5-layer-2-gradient-start, $decor-page-color-5-layer-2-gradient-stop);
+	}
+
+	.ncr-page-decor__layer-3 {
+		background-color: $decor-page-color-5-layer-3-bg;
+		background-image: linear-gradient($decor-page-color-5-layer-3-gradient-start, $decor-page-color-5-layer-3-gradient-stop);
+	}
+}

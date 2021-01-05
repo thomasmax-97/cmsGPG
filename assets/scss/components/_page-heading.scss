@@ -1,0 +1,265 @@
+//- Page Heading
+//- ----------------------------------------------
+
+.page-heading {
+
+	// Page Heading: Default
+	&--default {
+		margin-bottom: 38px;
+
+		@include media-breakpoint-up(sm) {
+			width: 50%;
+		}
+
+		@include media-breakpoint-up(md) {
+			width: 70%;
+			margin-bottom: 65px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			width: 80%;
+		}
+
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { color: $light; }
+	}
+
+	// Page Heading: Loop
+	&.page-heading--loop {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 100%;
+		padding: 60px 15px;
+		text-align: center;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		@include media-breakpoint-up(sm) {
+			padding-left: 60px;
+			padding-right: 60px;
+
+			&.page-heading--streams-archive {
+				height: auto;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 536px;
+			height: 100%;
+			padding-left: 60px;
+			padding-right: 60px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			width: 740px;
+		}
+	}
+
+	&--streams-archive {
+
+		.page-heading__title {
+
+			@include media-breakpoint-down(md) {
+				font-size: 4rem;
+			}
+
+			@include media-breakpoint-down(sm) {
+				font-size: 3rem;
+			}
+		}
+		.page-heading__body {
+			svg {
+				fill: $light;
+				width: 88px;
+				height: 28px;
+
+				@media (min-width: $xxl-breakpoint) {
+					width: 120px;
+					height: 40px;
+				}
+			}
+
+			svg + * {
+				margin-top: 38px;
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 45px;
+				}
+			}
+
+			h5, .h5 {
+				font-size: 1.25rem;
+				line-height: 1;
+
+				@media (min-width: $xxl-breakpoint) {
+					font-size: 1.75rem;
+				}
+			}
+
+			p {
+				padding-left: 16%;
+				padding-right: 16%;
+				line-height: 1.25rem;
+			}
+
+			* + p {
+				margin-top: 8px;
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 18px;
+				}
+			}
+		}
+	}
+
+	&--partners {
+		padding-top: 2rem;
+	}
+
+	&__title {
+
+		@include media-breakpoint-down(md) {
+			br {
+				display: none;
+			}
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 7.75rem;
+		}
+
+		.text-small & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 5.875rem;
+			}
+		}
+
+		.page-heading--loop & {
+			margin-bottom: 0;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 5.875rem;
+			}
+		}
+
+		.page-heading--default & {
+			margin-bottom: 0;
+		}
+
+		&.page-heading__title--sm {
+			@include media-breakpoint-up(lg) {
+				font-size: 3.5rem;
+			}
+		}
+
+		.link-plus {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin-left: 18px;
+		}
+	}
+
+	&__link {
+
+		&.page-heading__link--has-link-plus {
+			display: inline-block;
+			position: relative;
+
+			.link-plus {
+				display: block;
+				position: absolute;
+				right: -48px;
+			}
+		}
+	}
+
+	&__subtitle {
+		@include media-breakpoint-up(lg) {
+			font-size: 1.25rem;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 2.25rem;
+		}
+
+		.text-small & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.625rem;
+			}
+		}
+
+		.page-heading--loop & {
+			margin-bottom: 10px;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-bottom: 9px;
+				font-size: 1.625rem;
+			}
+		}
+
+		.page-heading--default & {
+			margin-bottom: 8px;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-bottom: 14px;
+			}
+		}
+
+		&.page-heading__subtitle--sm {
+			@include media-breakpoint-up(lg) {
+				font-size: 1.125rem;
+			}
+		}
+	}
+
+	&__logo {
+		margin-bottom: 36px;
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	&__body {
+		.page-heading__title + & {
+			.page-heading--partners & {
+				margin-top: 44px;
+
+				@include media-breakpoint-up(lg) {
+					margin-top: 84px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 74px;
+				}
+			}
+
+			.page-heading--streams-archive & {
+				margin-top: 44px;
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 68px;
+				}
+			}
+		}
+
+		* {
+			margin-bottom: 0;
+		}
+
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6 {
+			color: $light;
+		}
+	}
+
+	p,
+	&__title,
+	a[href^="mailto:"] {
+		color: $light;
+	}
+}

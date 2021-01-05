@@ -1,0 +1,17 @@
+//- Widget Areas
+//- ----------------------------------------------
+
+// Widget Area Before Loop
+
+.widger-area--before-loop {
+	width: 100%;
+
+	@include media-breakpoint-up(lg) {
+		width: 536px;
+		height: 100%;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		width: 740px;
+	}
+}

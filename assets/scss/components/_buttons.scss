@@ -1,0 +1,404 @@
+//- Buttons
+//- ----------------------------------------------
+
+//
+// Base styles
+//
+.btn,
+.button {
+	display: inline-block;
+	font-weight: $btn-font-weight;
+	font-family: $btn-font-family;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: none;
+	border-radius: 0;
+	color: $body-color;
+	@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	@include transition($btn-transition);
+
+	@media (min-width: $xxl-breakpoint) {
+		@include button-size(1.1875rem, 3.25rem, 1.125rem, 1, 0);
+	}
+
+	// Share hover and focus styles
+	@include hover-focus {
+		text-decoration: none;
+	}
+	&:focus,
+	&.focus {
+		outline: 0;
+		box-shadow: $btn-focus-box-shadow;
+	}
+
+	// Disabled comes first so active can properly restyle
+	&.disabled,
+	&:disabled {
+		opacity: .65;
+		@include box-shadow(none);
+	}
+
+	&:active,
+	&.active {
+		background-image: none;
+		@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+	}
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset[disabled] a.btn {
+	pointer-events: none;
+}
+
+
+//
+// Alternate buttons
+//
+
+.btn-primary {
+	color: $body-color;
+	background-color: $primary;
+
+	&:hover {
+		color: $body-color;
+		background-color: lighten($primary, 10%);
+	}
+}
+
+.btn-secondary {
+	color: $light;
+	background-color: $secondary;
+
+	&:hover {
+		color: $body-color;
+		background-color: $primary;
+	}
+}
+
+.btn-tertiary {
+	color: $light;
+	background-color: $tertiary;
+
+	&:hover {
+		color: $light;
+		background-color: lighten($tertiary, 10%);
+	}
+}
+
+.btn-success {
+	color: $light;
+	background-color: $success;
+
+	&:hover {
+		color: $light;
+		background-color: lighten($success, 10%);
+	}
+}
+
+.btn-danger {
+	color: $light;
+	background-color: $danger;
+
+	&:hover {
+		color: $light;
+		background-color: lighten($danger, 10%);
+	}
+}
+
+.btn-warning {
+	color: $light;
+	background-color: $warning;
+
+	&:hover {
+		color: $light;
+		background-color: lighten($warning, 10%);
+	}
+}
+
+.btn-info {
+	color: $body-color;
+	background-color: $info;
+
+	&:hover {
+		color: $body-color;
+		background-color: lighten($info, 10%);
+	}
+}
+
+.btn-twitch {
+	color: $light;
+	background-color: #5e22e4;
+
+	// @media (min-width: $xxl-breakpoint) {
+	// 	@include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+	// }
+
+	&:hover {
+		color: $light;
+		background-color: lighten(#5e22e4, 10%);
+	}
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.btn-link {
+	font-weight: $font-weight-normal;
+	color: $link-color;
+	border-radius: 0;
+
+	&,
+	&:active,
+	&.active,
+	&:disabled {
+		background-color: transparent;
+		@include box-shadow(none);
+	}
+	&,
+	&:focus,
+	&:active {
+		border-color: transparent;
+		box-shadow: none;
+	}
+	@include hover {
+		border-color: transparent;
+	}
+	@include hover-focus {
+		color: $link-hover-color;
+		text-decoration: $link-hover-decoration;
+		background-color: transparent;
+	}
+	&:disabled {
+		color: $btn-link-disabled-color;
+
+		@include hover-focus {
+			text-decoration: none;
+		}
+	}
+}
+
+.btn-link--clean {
+	letter-spacing: .25em;
+	text-transform: uppercase;
+	font-size: .75rem;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn-link--dash {
+	position: relative;
+
+	&::before {
+		content: "";
+		display: inline-block;
+		height: 1px;
+		width: 40px;
+		vertical-align: middle;
+		margin-right: 1.5rem;
+		background-color: $primary;
+
+		@include media-breakpoint-up(md) {
+			width: 80px;
+		}
+	}
+}
+
+.btn-link--dash-secondary {
+	&::before {
+		background-color: $white;
+	}
+}
+
+//
+// Button Sizes
+//
+
+.btn-lg {
+	@include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+
+	@media (min-width: $xxl-breakpoint) {
+		@include button-size(1.5rem, 3.5rem, 1.375rem, 1, 0);
+	}
+}
+
+.btn-sm {
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+//
+// Block button
+//
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+	margin-top: $btn-block-spacing-y;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	&.btn-block {
+		width: 100%;
+	}
+}
+
+
+//
+// Button with Icon
+//
+
+.btn {
+	i {
+		position: relative;
+		top: -.075rem;
+		display: inline-block;
+		margin-right: 14px;
+		font-size: .75rem;
+		font-weight: normal;
+		vertical-align: middle;
+
+		@media (min-width: $xxl-breakpoint) {
+			top: -.125rem;
+			font-size: 1.125rem;
+		}
+	}
+
+	&.btn--icon-inverse {
+		i {
+			margin-left: 14px;
+			margin-right: 0;
+		}
+	}
+}
+
+.btn-twitch {
+	i {
+		font-size: 1.2em;
+		margin-right: .5em;
+	}
+}
+
+//
+// Button Landing
+//
+
+.btn--landing {
+	overflow: hidden;
+	position: relative;
+	margin-top: 1.4375rem;
+
+	@include media-breakpoint-down(sm) {
+		font-size: .75rem;
+		margin-top: .8rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-top: 24px;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		margin-top: 45px;
+	}
+
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateY(100%);
+	}
+
+	&::before {
+		transition: .4s .2s transform ease;
+	}
+
+	&::after {
+		transition: .6s transform ease;
+	}
+
+	@each $color, $value in $theme-colors {
+		&.btn-#{$color} {
+			box-shadow: 0 0 40px 2px rgba($value, .2);
+
+			&::before {
+				background-color: darken($value, 7.5);
+			}
+			&::after {
+				background-color: darken($value, 10);
+			}
+		}
+	}
+
+	span {
+		position: relative;
+		z-index: 1;
+	}
+
+	&:hover {
+		box-shadow: none;
+
+		&:after {
+			transform: translateY(0);
+			transition: .4s .2s transform ease;
+		}
+
+		&:before {
+			transform: translateY(0);
+			transition: .6s transform ease;
+		}
+	}
+
+	&.btn-lg {
+		@include media-breakpoint-down(sm) {
+			padding: .9rem 1.6rem;
+		}
+	}
+}
+
+
+// Link plus
+.link-plus {
+	display: inline-block;
+	position: relative;
+	width: 22px;
+	height: 22px;
+	border: 3px solid $white;
+	border-radius: 50%;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		background-color: $primary;
+		overflow: hidden;
+	}
+
+	&::before {
+		width: 6px;
+		height: 2px;
+	}
+
+	&::after {
+		width: 2px;
+		height: 6px;
+	}
+}

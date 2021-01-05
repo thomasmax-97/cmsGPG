@@ -1,0 +1,59 @@
+.icon-svg {
+    font-size: 10px;
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../img/sprite.svg");
+      background-repeat: no-repeat;
+      background-size: 2.7em 8.1em;
+
+      .no-svg & {
+        background-image: url("../img/sprite.svg");
+      }
+    }
+}
+
+
+
+
+.icon-svg.icon-bag {
+  &:before {
+      background-position: 0em 0em;
+      width: 2.3em;
+      height: 2.7em;
+    }
+  }
+
+  @mixin icon-svg-icon-bag(){
+    @extend .icon-bag;
+  }
+
+
+.icon-svg.icon-search {
+  &:before {
+      background-position: 0em -2.7em;
+      width: 2.7em;
+      height: 2.7em;
+    }
+  }
+
+  @mixin icon-svg-icon-search(){
+    @extend .icon-search;
+  }
+
+
+.icon-svg.icon-thumb-up {
+  &:before {
+      background-position: 0em -5.4em;
+      width: 2.7em;
+      height: 2.7em;
+    }
+  }
+
+  @mixin icon-svg-icon-thumb-up(){
+    @extend .icon-thumb-up;
+  }
+
+
+

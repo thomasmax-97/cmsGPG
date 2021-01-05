@@ -1,0 +1,77 @@
+//- Match Stats Tabs
+//- ----------------------------------------------
+
+.matches-tabs {
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__navigation {
+		@include list-unstyled;
+		justify-content: center;
+		margin-top: 30px;
+		padding-bottom: 30px;
+		font-size: .875rem;
+		font-weight: $font-weight-bold;
+		letter-spacing: -.03em;
+		text-transform: uppercase;
+		text-align: center;
+		color: $light;
+
+		@include media-breakpoint-up(lg) {
+			order: 1;
+			margin-top: 62px;
+			margin-bottom: 0;
+		}
+
+		li {
+			display: inline-block;
+
+			a {
+				color: $secondary;
+
+				&:hover,
+				&.active {
+					color: $primary;
+				}
+			}
+
+			& + li {
+				margin-left: 20px;
+
+				@include media-breakpoint-up(sm) {
+					margin-left: 40px;
+				}
+
+				@include media-breakpoint-up(md) {
+					margin-left: 50px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					margin-left: 70px;
+				}
+			}
+		}
+	}
+
+	&__content {
+		&.tab-content > .active {
+			@include media-breakpoint-up(lg) {
+				display: flex;
+			}
+		}
+	}
+}
+
+
+// Alternative color
+.matches-tabs__navigation--color-light {
+
+	li {
+
+		a {
+			color: rgba(255,255,255,.3);
+		}
+	}
+}

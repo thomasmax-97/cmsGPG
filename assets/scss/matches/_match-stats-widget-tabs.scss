@@ -1,0 +1,57 @@
+//- Match Stats Widget Tabs
+//- ----------------------------------------------
+
+.match-stats-widget-tabs {
+	&__header,
+	&__body ul > li {
+		padding: 19px 24px 17px;
+		vertical-align: middle;
+	}
+
+	&__body ul > li {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-color: rgba($secondary, .2);
+
+		& + * {
+			border-top-width: 1px;
+			border-top-style: solid;
+		}
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:nth-child(odd) {
+			background-color: #13151e;
+		}
+
+		&:nth-child(even) {
+			background-color: $dark;
+		}
+	}
+
+	&__header {
+		margin-bottom: 0;
+		background-color: $dark;
+		border-bottom: 1px solid rgba($secondary, .2);
+
+		li {
+			display: inline-block;
+
+			a {
+				color: $secondary;
+
+				&:hover,
+				&.active {
+					color: $primary;
+				}
+			}
+
+			& + li {
+				margin-left: 17px;
+			}
+		}
+	}
+}

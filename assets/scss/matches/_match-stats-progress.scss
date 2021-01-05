@@ -1,0 +1,255 @@
+//- Match Stats Progress
+//- ----------------------------------------------
+
+.match-stats-progress {
+	display: flex;
+	flex-wrap: wrap;
+
+	&--icon,
+	&--double {
+		flex-wrap: nowrap;
+	}
+
+	&--icon {
+		align-items: center;
+
+		& > div:last-child {
+			margin-left: auto;
+			width: 56%;
+
+			@include media-breakpoint-down(md) {
+				min-width: 136px;
+			}
+		}
+	}
+
+	.match-stats-widget & {
+		padding-bottom: 1px;
+	}
+
+	.match-stats-widget-tabs & {
+		display: block;
+
+		@include media-breakpoint-down(md) {
+			width: 32%;
+		}
+	}
+
+	&__icon {
+		width: 24px;
+		height: 24px;
+
+		@include media-breakpoint-up(xl) {
+			margin-left: 6px;
+		}
+	}
+
+	&__label {
+		width: 100%;
+		margin-bottom: 13px;
+		text-align: center;
+
+		.match-stats-progress--double & {
+			width: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0;
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+
+		.match-stats-progress--icon & {
+			width: auto;
+			margin-bottom: 0;
+			padding-left: 10px;
+			padding-right: 15px;
+			text-align: left;
+		}
+	}
+
+	&__score {
+		flex-basis: 36px;
+		min-width: 36px;
+
+		.match-stats-progress__bar-group & {
+			flex-basis: 30px;
+			min-width: 30px;
+
+			@include media-breakpoint-up(xl) {
+				flex-basis: 40px;
+				min-width: 40px;
+			}
+		}
+
+		.match-stats-widget-tabs & {
+			display: block;
+			margin-bottom: 3px;
+			font-size: .625rem;
+			text-align: right;
+		}
+	}
+
+	&__bar-group {
+		display: flex;
+
+		& + & {
+			margin-top: 6px;
+		}
+	}
+
+	&__bar {
+		position: relative;
+		display: block;
+		flex-basis: calc(100% - 72px);
+		height: 10px;
+		overflow: hidden;
+
+		.match-stats-progress__bar-group & {
+			flex-basis: 100%;
+
+			@include media-breakpoint-down(md) {
+				min-width: 94px;
+			}
+		}
+
+		.match-stats-widget-tabs & {
+			min-width: 78px;
+			margin-right: -1px;
+		}
+
+		.match-stats-progress--double & {
+			flex-basis: 19%;
+			min-width: 46px;
+
+			@include media-breakpoint-between(sm,md) {
+				flex-basis: 35%;
+			}
+		}
+
+		&:before,
+		span:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 1000px;
+			background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-default-color 2px, $msw-default-color 4px);
+		}
+
+		.match-stats-progress--double & {
+			span,
+			&:before,
+			span:before {
+				left: auto;
+				right: 0;
+			}
+
+			&:before {
+				background-image: repeating-linear-gradient(to left, transparent, transparent 2px, $msw-default-color 2px, $msw-default-color 4px);
+			}
+
+			& ~ .match-stats-progress__bar {
+				span,
+				&:before,
+				span:before {
+					left: 0;
+					right: auto;
+				}
+
+				&:before {
+					background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-default-color 2px, $msw-default-color 4px);
+				}
+			}
+		}
+
+		span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+
+			&:first-child {
+				z-index: 1;
+			}
+		}
+
+		.team-1 {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $team-1 2px, $team-1 4px);
+			}
+		}
+
+		.team-2 {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $team-2 2px, $team-2 4px);
+			}
+		}
+
+		.team-3 {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $team-3 2px, $team-3 4px);
+			}
+		}
+
+		.team-4 {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $team-4 2px, $team-4 4px);
+			}
+		}
+
+		.team-5 {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $team-5 2px, $team-5 4px);
+			}
+		}
+
+		.team-blue,
+		.team-blue & span {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-blue-color 2px, $msw-blue-color 4px);
+			}
+		}
+
+		.team-red,
+		.team-red & span {
+			&:before {
+				background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-red-color 2px, $msw-red-color 4px);
+			}
+		}
+
+		.match-stats-progress--double & {
+			.team-blue {
+				&:before {
+					background-image: repeating-linear-gradient(to left, transparent, transparent 2px, $msw-blue-color 2px, $msw-blue-color 4px);
+				}
+			}
+
+			.team-red {
+				&:before {
+					background-image: repeating-linear-gradient(to left, transparent, transparent 2px, $msw-red-color 2px, $msw-red-color 4px);
+				}
+			}
+
+			& ~ .match-stats-progress__bar {
+				.team-blue {
+					&:before {
+						background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-blue-color 2px, $msw-blue-color 4px);
+					}
+				}
+
+				.team-red {
+					&:before {
+						background-image: repeating-linear-gradient(to right, transparent, transparent 2px, $msw-red-color 2px, $msw-red-color 4px);
+					}
+				}
+			}
+		}
+	}
+
+	&__bar ~ &__score {
+		text-align: right;
+	}
+}

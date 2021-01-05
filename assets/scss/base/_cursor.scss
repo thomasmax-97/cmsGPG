@@ -1,0 +1,53 @@
+.df-custom-cursor-wrap {
+	pointer-events: none;
+
+	@media (hover: hover) and (pointer: fine) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		overflow: hidden;
+		z-index: 9999999;
+	}
+}
+
+#df-custom-cursor {
+
+	@media (hover: hover) and (pointer: fine) {
+		position: absolute;
+		width: $cursor-size;
+		height: $cursor-size;
+		margin-top: -$cursor-size / 2;
+		margin-left: -$cursor-size / 2;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: $cursor-dot-size;
+			height: $cursor-dot-size;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background-color: $cursor-color-dot;
+			opacity: $cursor-color-dot-opacity;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: $cursor-size;
+			height: $cursor-size;
+			border-radius: 50%;
+			border: 1px solid $cursor-color-border;
+			opacity: $cursor-color-border-opacity;
+		}
+	}
+}

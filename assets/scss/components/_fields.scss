@@ -1,0 +1,270 @@
+//- Fields
+//- ----------------------------------------------
+
+.form-group {
+	position: relative;
+	margin-bottom: 35px;
+
+	@media (min-width: $xxl-breakpoint) {
+		margin-bottom: 50px;
+	}
+
+	.account-page .form & {
+		@media (max-width: 575px) {
+			.btn {
+				display: block;
+				width: 100%;
+				margin-top: 28px;
+				float: none;
+			}
+		}
+
+		.btn {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.form-control {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: 0px 0px 10px;
+	border: none;
+	border-radius: 0;
+	font-size: $font-size-sm;
+	color: $body-color;
+	background-color: $input-bg;
+	border-bottom: $input-border-width solid $input-border-color;
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: $font-size-lg;
+		padding-bottom: 12px;
+	}
+
+	&::-webkit-input-placeholder { color: rgba($input-color, .4); }
+	&::-moz-placeholder          { color: rgba($input-color, .4); }
+	&:-ms-input-placeholder      { color: rgba($input-color, .4); }
+	&:-moz-placeholder           { color: rgba($input-color, .4); }
+
+	&:focus,
+	.has-active & {
+		outline: none;
+		box-shadow: none;
+		background-color: transparent;
+		border-color: $success;
+	}
+
+	&.has-success {
+		background-image: url("../img/form-success.svg");
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		background-size: 24px 24px;
+	}
+
+	&.has-error {
+		background-image: url("../img/form-alert.svg");
+		background-repeat: no-repeat;
+		background-position: 100% 0;
+		background-size: 24px 24px;
+	}
+}
+
+textarea.form-control {
+	display: block;
+}
+
+.form-notice {
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 0;
+	font-size: .625rem;
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: .75rem;
+	}
+}
+
+.control-label {
+	display: block;
+	margin-bottom: 4px;
+	line-height: 1;
+	font-size: .5625rem;
+	color: rgba($body-color, .4);
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: .75rem;
+	}
+}
+
+.select-wrapper {
+	position: relative;
+	margin-top: 0px;
+
+	select {
+		display: inline-block;
+		width: 100%;
+		padding: 0px 20px 10px 0px;
+		line-height: 1.5;
+		appearance: none;
+		-webkit-appearance: none;
+		border: none;
+		border-radius: 0;
+		outline: 0;
+		background-color: transparent;
+		border-bottom: $input-border-width solid $input-border-color;
+
+		@media (min-width: $xxl-breakpoint) {
+			padding-bottom: 12px;
+		}
+
+		body:not(.cursor-is--active) & {
+			cursor: pointer;
+		}
+	}
+
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		background-color: $success;
+		transition: opacity 300ms ease;
+	}
+
+	&:before {
+		top: 12px;
+		right: 0;
+		width: 6px;
+		height: 2px;
+
+		@media (min-width: $xxl-breakpoint) {
+			top: 15px;
+			width: 9px;
+			height: 3px;
+		}
+	}
+
+	&:after {
+		top: 10px;
+		right: 2px;
+		width: 2px;
+		height: 6px;
+
+		@media (min-width: $xxl-breakpoint) {
+			top: 12px;
+			right: 3px;
+			width: 3px;
+			height: 9px;
+		}
+	}
+}
+
+// Checkbox
+.checkbox {
+	position: relative;
+	display: block;
+	min-height: (1rem * $line-height-base);
+	padding-top: 4px;
+	padding-bottom: 3px;
+	padding-left: 30px;
+	margin-bottom: 0;
+	font-weight: $font-weight-bold;
+	letter-spacing: -.03em;
+	text-transform: uppercase;
+	line-height: 1.2;
+
+	@media (min-width: $xxl-breakpoint) {
+		padding-top: 6px;
+		padding-left: 37px;
+		font-size: 1.125rem;
+	}
+}
+
+.checkbox-inline {
+	display: inline-flex;
+}
+
+.checkbox-label {
+	position: absolute;
+	top: 3px;
+	left: 0;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 1px solid $input-border-color;
+
+	@media (min-width: $xxl-breakpoint) {
+		top: 4px;
+		width: 24px;
+		height: 24px;
+	}
+
+	&:after,
+	&:before {
+		content: "";
+	}
+
+	&:after,
+	&:before {
+		position: absolute;
+		top: 6px;
+		left: 3px;
+		width: 8px;
+		height: 2px;
+		content: "";
+		opacity: 0;
+		background-color: $success;
+		transition: opacity 300ms ease;
+
+		@media (min-width: $xxl-breakpoint) {
+			top: 10px;
+			left: 4px;
+			width: 14px;
+			height: 3px;
+		}
+	}
+
+	&:after {
+		transform: rotate(45deg);
+	}
+
+	&:before {
+		transform: rotate(-45deg);
+	}
+}
+
+.checkbox-input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+
+	&:checked ~ .checkbox-label {
+		&:after,
+		&:before {
+			opacity: 1;
+		}
+	}
+
+	&:focus ~ .custom-control-label {
+		&:after,
+		&:before {
+			opacity: 1;
+		}
+	}
+
+	&:active ~ .custom-control-label {
+		&:after,
+		&:before {
+			opacity: 1;
+		}
+	}
+
+	&:disabled {
+		~ .custom-control-label {
+			&:after,
+			&:before {
+
+			}
+		}
+	}
+}

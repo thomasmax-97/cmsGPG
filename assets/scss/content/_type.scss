@@ -1,0 +1,438 @@
+//
+// Headings
+//
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-normal;
+	line-height: 1.71428571;
+	color: $body-color;
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: $font-size-lg;
+	}
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin-bottom: $headings-margin-bottom;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	line-height: $headings-line-height;
+	text-transform: uppercase;
+	color: $headings-color;
+}
+
+h1, h2, h3, h4, h5,
+.h1, .h2, .h3, .h4, .h5 {
+	letter-spacing: -.06em;
+}
+
+h1, .h1 {
+	font-size: $h1-font-size * .4;
+
+	@include media-breakpoint-up(sm) {
+		font-size: $h1-font-size * .75;
+	}
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h1-font-size;
+	}
+
+	@include media-breakpoint-down(sm) {
+		.site-layout--landing & {
+			font-size: 2.375rem // 38px;
+		}
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		.site-layout--landing & {
+			font-size: 7.75rem;
+		}
+	}
+}
+
+h2, .h2 {
+	@include media-breakpoint-up(lg) {
+		font-size: $h2-font-size;
+	}
+}
+
+h3, .h3 {
+	@include media-breakpoint-up(lg) {
+		font-size: $h3-font-size;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: 4rem;
+	}
+}
+
+h4, .h4 {
+	font-size: 1.5rem;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h4-font-size;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: 2.875rem;
+	}
+
+	&.text-sm {
+		font-size: 1.375rem;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 1.625rem;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 1.75rem;
+		}
+	}
+}
+
+h5, .h5 {
+	font-size: 1.125rem;
+	line-height: 1;
+
+	@include media-breakpoint-up(lg) {
+		font-size: $h5-font-size;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: 1.75rem;
+	}
+}
+
+h6, .h6 {
+	font-size: $h6-font-size;
+	line-height: 1;
+	letter-spacing: -.03em;
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: 1.5rem;
+	}
+
+	&.text-sm {
+		font-size: .875rem;
+		line-height: 1.65;
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 1.125rem;
+		}
+	}
+}
+
+.lead {
+	font-size: $lead-font-size;
+	font-weight: $lead-font-weight;
+}
+
+.subtitle {
+	h1 & {
+		display: block;
+		margin-bottom: .43em;
+		font-size: 1.25rem;
+		font-weight: 500;
+		letter-spacing: -.03em;
+		color: $primary;
+
+		&.subtitle--warning {
+			color: #f7ff2a;
+		}
+		&.subtitle--danger {
+			color: $danger;
+		}
+
+		@include media-breakpoint-up(sm) {
+			font-size: 1.5rem;
+		}
+
+		@include media-breakpoint-down(sm) {
+			.site-layout--landing & {
+				font-size: 1rem;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			font-size: 1.875rem;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			.site-layout--landing & {
+				font-size: 2.625rem;
+			}
+		}
+	}
+}
+
+//
+// Horizontal rules
+//
+
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+	.hr--lg {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.hr--xl {
+		margin-top: 4.5rem;
+		margin-bottom: 4.5rem;
+	}
+
+
+//
+// Emphasis
+//
+
+small,
+.small {
+	font-size: $small-font-size;
+	font-weight: inherit;
+}
+
+mark,
+.mark {
+	padding: $mark-padding;
+	background-color: $mark-bg;
+}
+
+a {
+	color: inherit;
+	transition: 300ms all ease;
+
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+a[href^="mailto:"]:hover {
+	opacity: .7;
+}
+
+//
+// Text Colors
+//
+.color {
+	&-warning {
+		color: $warning;
+	}
+}
+
+//
+// Lists
+//
+
+.list-unstyled {
+	@include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+	@include list-unstyled;
+}
+
+.list-inline-item {
+	display: inline-block;
+
+	&:not(:last-child) {
+		margin-right: $list-inline-padding;
+	}
+}
+
+ol.list,
+ul.list {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1.5em;
+
+	li {
+		position: relative;
+		padding: 0 0 .5em 1.875em;
+
+		&::before {
+			display: inline-block; /* block would also work */
+			position: absolute; /* move this out of the way of the text */
+			left: 0; /* move the counter label into the space from the padding */
+			width: 20px;
+			font-size: 1em;
+			color: $primary;
+		}
+	}
+}
+
+ol.list {
+	counter-reset: counter;
+
+	li {
+		&::before {
+			content: counter(counter) ". ";
+			counter-increment: counter;
+			font-weight: $font-weight-bold;
+		}
+	}
+}
+
+ul.list {
+	li {
+		&::before {
+			font-family: 'Font Awesome 5 Free';
+			font-weight: $font-weight-base;
+			content: "\f00c";
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+}
+
+
+//
+// Misc
+//
+
+.font-bold {
+	font-weight: $font-weight-bold;
+}
+
+// Builds on `abbr`
+.initialism {
+	font-size: 90%;
+	text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+	margin-bottom: $spacer;
+	font-size: $blockquote-font-size;
+}
+
+.blockquote-footer {
+	display: block;
+	font-size: 80%; // back to default font-size
+	color: $blockquote-small-color;
+
+	&::before {
+		content: "\2014 \00A0"; // em dash, nbsp
+	}
+}
+
+.page-content {
+	* + h4 {
+		margin-top: 50px;
+	}
+
+	* + .social-menu {
+		margin-top: 28px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 32px;
+		}
+	}
+
+	h4 + p {
+		margin-top: 27px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 46px;
+		}
+	}
+
+	h4 + form {
+		margin-top: 66px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 85px;
+		}
+	}
+
+	.social-menu + h4.text-sm {
+		margin-top: 59px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 98px;
+		}
+	}
+}
+
+.contact-us-page {
+
+}
+
+.spacer,
+.spacer-lg {
+	display: block;
+
+	& + h4 {
+		margin-top: 0;
+	}
+}
+
+.spacer {
+
+	height: 30px;
+
+	@include media-breakpoint-up(md) {
+		height: 57px;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		height: 76px;
+	}
+
+	p + & {
+		margin-top: -24px;
+	}
+
+	h4 + & {
+		margin-top: -32px;
+	}
+}
+
+.spacer-lg {
+	height: 60px;
+
+	@include media-breakpoint-up(md) {
+		height: 90px;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		height: 107px;
+	}
+}
+
+.color-primary {
+	color: $primary!important;
+}
+
+.color-warning {
+	color: $warning!important;
+}
+
+.color-success {
+	color: $success!important;
+}
+
+.color-danger {
+	color: $danger!important;
+}
+
+.color-gold {
+	color: #ffdf0b;
+}
+
+.color-silver {
+	color: #c3e0fc;
+}
+
+.color-bronze {
+	color: #f88052;
+}

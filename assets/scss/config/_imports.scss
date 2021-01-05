@@ -1,0 +1,31 @@
+//- Config
+//- ----------------------------------------------
+
+
+
+//- Grid containers
+//- ----------------------------------------------
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+// @include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Boostrap
+@import "../../vendor/bootstrap/scss/bootstrap.scss";
+
+// Template Mixins
+@import "mixins";
+
+// Template Variables
+@import "variables";
+@import "custom-variables";
+
+// Fontawesome
+@import "../../vendor/fontawesome/scss/fontawesome.scss";
+@import "../../vendor/fontawesome/scss/solid.scss";
+@import "../../vendor/fontawesome/scss/brands.scss";

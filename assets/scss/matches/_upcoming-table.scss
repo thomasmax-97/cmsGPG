@@ -1,0 +1,124 @@
+//- Upcoming Table
+//- ----------------------------------------------
+
+.upcoming-table {
+	font-size: 1.125rem;
+
+	@media (min-width: $xxl-breakpoint) {
+		font-size: 1.75rem;
+	}
+
+	tbody {
+		td {
+			padding: 22px 14px;
+
+			&:first-child {
+				width: 4.78%;
+				min-width: 48px;
+				padding-top: 24px;
+				padding-right: 0;
+			}
+
+			&:nth-child(2) {
+				width: 27.812%;
+				min-width: 248px;
+			}
+
+			&:nth-child(3) {
+				width: 23.5%;
+				min-width: 180px;
+			}
+
+			&:nth-child(4),
+			&:nth-child(5) {
+				width: 13.675%;
+				min-width: 130px;
+			}
+
+			&:nth-child(6) {
+				width: 16.585%;
+				min-width: 124px;
+			}
+
+			@include media-breakpoint-up(sm) {
+				padding: 29px 0 27px 24px;
+
+				&:first-child {
+					min-width: 56px;
+					padding-top: 34px;
+				}
+
+				&:nth-child(6) {
+					min-width: 140px;
+				}
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				padding-top: 36px;
+				padding-bottom: 34px;
+
+				&:first-child {
+					padding-top: 40px;
+				}
+			}
+		}
+	}
+
+	&__label {
+		display: block;
+		margin-top: 6px;
+		font-size: .75rem;
+		color: $secondary;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 5px;
+			font-size: 1.25rem;
+		}
+	}
+
+	&__team {
+		&-vs {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 16px;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-left: 28px;
+			}
+		}
+	}
+
+	&__tickets,
+	&__date span {
+		color: $primary;
+	}
+
+	&__date {
+		font-size: .875rem;
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 1.75rem;
+		}
+
+		span {
+			display: block;
+			font-size: 1.75rem;
+			line-height: .75;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-bottom: -1px;
+				font-size: 3.25rem;
+			}
+		}
+	}
+
+	&__tickets {
+		&:hover {
+			color: $light;
+		}
+
+		&.disable {
+			color: $secondary;
+		}
+	}
+}
