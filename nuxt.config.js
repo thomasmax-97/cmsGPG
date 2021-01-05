@@ -9,11 +9,38 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+            "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+            "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js",
+        type: "text/javascript"
+      },
+      {
+        src:
+            "~assets/js/init.js",
+        type: "text/javascript"
+      }
     ]
   },
 
+  styleResources: {
+    scss: ['./assets/scss/*.scss']
+  },
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
+
   css: [
+  '~assets/scss/style.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -31,7 +58,9 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    'nuxt-fontawesome',
   ],
+
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

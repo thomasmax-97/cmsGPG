@@ -1,0 +1,249 @@
+//- Team Carousel
+//- ----------------------------------------------
+
+.team-carousel {
+	position: relative;
+	z-index: 1;
+
+	@include media-breakpoint-up(xl) {
+		padding-left: 70px;
+	}
+
+	&__content > .slick-dots {
+		position: absolute;
+		top: 30px;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		@media (min-width: 1200px) {
+			top: 50%;
+			transform: translateY(-50%);
+			left: -78px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			left: -98px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			left: -124px;
+		}
+
+		li {
+			display: block;
+			width: 34px;
+			height: 34px;
+			line-height: 34px;
+			border: 2px solid $secondary;
+			border-radius: 100%;
+			text-align: center;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 44px;
+				height: 44px;
+				line-height: 42px;
+				border-width: 3px;
+			}
+
+			body:not(.cursor-is--active) & {
+				cursor: pointer;
+			}
+
+			svg {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				fill: $secondary;
+				transition: fill 300ms ease;
+
+				@media (min-width: $xxl-breakpoint) {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			&:hover,
+			&.slick-active {
+				border-color: $primary;
+
+				svg {
+					fill: $light;
+				}
+			}
+		}
+
+		li {
+			display: inline-block;
+
+			@media (min-width: 1200px) {
+				display: block;
+			}
+
+			& + li {
+				position: relative;
+
+				.player-info-page & {
+					@media (max-width: 374px) {
+						margin-left: 30px;
+					}
+				}
+
+				@media (max-width: 1199px) {
+					margin-left: 34px;
+				}
+
+				@media (min-width: 1200px) {
+					margin-top: 38px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 50px;
+				}
+
+				&:before {
+					position: absolute;
+					content: "";
+
+					.player-info-page & {
+						@media (max-width: 374px) {
+							width: 22px;
+						}
+					}
+
+					@media (max-width: 1199px) {
+						width: 26px;
+						top: 14px;
+						right: calc(100% + 6px);
+						border-top: 2px dotted $secondary;
+					}
+
+					@media (min-width: 1200px) {
+						bottom: calc(100% + 6px);
+						left: 14px;
+						height: 30px;
+						border-left: 2px dotted $secondary;
+					}
+
+					@media (min-width: $xxl-breakpoint) {
+						bottom: calc(100% + 12px);
+						left: 16px;
+						height: 32px;
+						border-width: 4px;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		@media (min-width: 1200px) {
+			height: calc(100vh - #{$header-height-desktop-mobile});
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			height: calc(100vh - #{$header-height-desktop});
+		}
+	}
+
+	&__item {
+
+		@media (max-width: 1199px) {
+			padding-top: 110px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding-top: 94px;
+		}
+
+		@media (min-width: 1200px) {
+			display: flex!important;
+			align-items: center;
+			min-height: calc(100vh - #{$header-height-desktop-mobile});
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			min-height: calc(100vh - #{$header-height-desktop});
+		}
+
+		& > .row > div {
+
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.col-md-6.col-xl-4 {
+			@media (min-width: 992px) and (max-width: 1199px) {
+				flex: 0 0 33.33333%;
+				max-width: 33.33333%;
+			}
+		}
+
+		.row-between-xl-2col {
+			@media (min-width: 1200px) and (max-width: 1439px) {
+				& > div {
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}
+		}
+
+		p {
+			color: $body-color-dark;
+		}
+
+		* + p {
+			margin-top: -6px;
+		}
+	}
+
+	&-tabs {
+		&__navigation {
+			justify-content: center;
+			margin-top: 18px;
+			font-weight: $font-weight-bold;
+			letter-spacing: -.03em;
+			text-transform: uppercase;
+			text-align: center;
+			color: $light;
+
+			li {
+				display: inline-block;
+
+				body:not(.cursor-is--active) & {
+					cursor: pointer;
+				}
+
+				a {
+					outline: none;
+					color: $secondary;
+
+					&:hover,
+					&.active {
+						color: $primary;
+					}
+				}
+
+				& + li {
+					margin-left: 20px;
+
+					@include media-breakpoint-up(sm) {
+						margin-left: 34px;
+					}
+				}
+			}
+		}
+	}
+
+	* + .row.row-mb-balance {
+		margin-bottom: -24px !important;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: -39px !important;
+		}
+
+		@include media-breakpoint-up(xl) {
+			margin-bottom: -49px !important;
+		}
+	 }
+}

@@ -1,0 +1,98 @@
+//- Widget: Posts Carousel
+//- ----------------------------------------------
+
+.widget-carousel {
+	.post {
+		&__thumbnail {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba($dark, .4);
+			}
+		}
+
+		&__body {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			padding: 40px 60px;
+
+			@media (min-width: $xxl-breakpoint) {
+				padding-left: 80px;
+				padding-right: 80px;
+			}
+		}
+
+		&__cats,
+		&__meta {
+			font-weight: $font-weight-bold;
+			text-transform: uppercase;
+		}
+
+		&__cats {
+			margin-bottom: 6px;
+			font-size: 1.125rem;
+			letter-spacing: -.06rem;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.5rem;
+			}
+		}
+
+		&__meta {
+			&,
+			a {
+				color: $light;
+			}
+
+			font-size: .75rem;
+			letter-spacing: -.03rem;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-top: 3px;
+				font-size: 1.125rem;
+			}
+		}
+
+		&__title {
+			margin-bottom: 14px;
+			font-size: 1.75rem;
+
+			@include media-breakpoint-up(md) {
+				font-size: $h3-font-size;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 4rem;
+			}
+
+			a {
+				color: $light;
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

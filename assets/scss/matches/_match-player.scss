@@ -1,0 +1,139 @@
+//- Match Stats Player
+//- ----------------------------------------------
+
+.match-player {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin-bottom: 0;
+	overflow: hidden;
+
+	&__avatar {
+		position: relative;
+		margin-bottom: 0;
+
+		.match-player--small & {
+			margin-right: 12px;
+
+			.lineups-table td:last-child & {
+				margin-right: 0;
+				margin-left: 12px;
+			}
+		}
+
+		.match-player:not(.match-player--small) & {
+			&:before {
+				position: absolute;
+				top: -50%;
+				right: 40%;
+				bottom: -50%;
+				left: -50%;
+				content: "";
+				background-color: $secondary;
+				transform: rotate(20deg);
+			}
+		}
+
+		.team-1:not(.match-player--small) &:before { background-color: $team-1 }
+		.team-2:not(.match-player--small) &:before { background-color: $team-2 }
+		.team-3:not(.match-player--small) &:before { background-color: $team-3 }
+		.team-4:not(.match-player--small) &:before { background-color: $team-4 }
+		.team-5:not(.match-player--small) &:before { background-color: $team-5 }
+
+		img {
+			position: relative;
+			width: 100%;
+			z-index: 1;
+
+			.match-player--small & {
+				margin-bottom: 3px;
+
+				.lineups-table & {
+					margin-bottom: 1px;
+				}
+			}
+		}
+
+		svg {
+			width: 24px;
+			height: 24px;
+			vertical-align: middle;
+			fill: $primary;
+		}
+	}
+
+	&__name {
+		display: block;
+		font-size: .625rem;
+		color: $secondary;
+
+		.lineups-table & {
+			text-transform: uppercase;
+		}
+	}
+
+	&__skills {
+		display: flex;
+		flex-direction: column;
+		margin-right: 12px;
+		margin-bottom: 3px;
+
+		.lineups-table & {
+			margin-bottom: 1px;
+		}
+
+		.match-player--small & {
+			margin-left: -10px;
+
+			.lineups-table td:last-child & {
+				order: 1;
+				margin-left: 12px;
+				margin-right: -10px;
+			}
+		}
+
+		img + img {
+			margin-top: 2px;
+		}
+	}
+
+	&__level {
+		position: absolute;
+		bottom: 1px;
+		right: 0;
+		width: 10px;
+		height: 10px;
+		font-size: .5rem;
+		line-height: 12px;
+		text-align: center;
+		background-color: $secondary;
+		z-index: 1;
+
+		.lineups-table td:last-child & {
+			right: auto;
+			left: 0;
+		}
+
+		.team-blue & {
+			background-color: $msw-blue-color;
+		}
+
+		.team-red & {
+			background-color: $msw-red-color;
+		}
+	}
+
+	&__nickname {
+		font-size: .875rem;
+		text-transform: none;
+	}
+
+	&--small {
+		.lineups-table td:first-child & {
+			padding-left: 24px;
+		}
+		.lineups-table td:last-child & {
+			padding-right: 24px;
+		}
+	}
+}

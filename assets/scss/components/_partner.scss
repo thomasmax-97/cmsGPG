@@ -1,0 +1,144 @@
+//- Partners
+//- ----------------------------------------------
+
+.content {
+	&.partners-layout {
+		@include media-breakpoint-up(sm) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		@include media-breakpoint-up(lg) {
+			display: grid;
+			grid-auto-flow: column;
+			grid-template-rows: 50% 50%;
+			grid-auto-columns: calc(50vh - #{$header-height-desktop-mobile} / 2);
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			grid-auto-columns: calc(50vh - #{$header-height-desktop} / 2);
+		}
+	}
+}
+
+.partner {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vw;
+	padding: 40px;
+	text-align: center;
+	background-color: $light;
+	overflow: hidden;
+
+	@include media-breakpoint-up(sm) {
+		width: 50%;
+		min-height: 50vw;
+	}
+
+	@include media-breakpoint-up(lg) {
+		width: 100%;
+		min-height: auto;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include fluid-value(padding, 40);
+	}
+
+	&:nth-child(4n-1),
+	&:nth-child(4n-2) {
+		background-color: #f7f8fa;
+	}
+
+	&__logo,
+	&__header {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		transition: all 700ms ease;
+	}
+
+	&__logo {
+		bottom: 50%;
+
+		img {
+			max-width: 80%;
+			margin: 0 auto 24px;
+
+			@include media-breakpoint-up(lg) {
+				@include fluid-value(margin-bottom, 24);
+			}
+		}
+	}
+
+	&__header {
+		top: 50%;
+	}
+
+	&__title {
+		margin-bottom: 1px;
+
+		@include media-breakpoint-up(lg) {
+			@include fluid-value(margin-bottom, 1);
+			@include fluid-value(font-size, 32);
+		}
+	}
+
+	&__info {
+		font-size: .75rem;
+		font-weight: $font-weight-bold;
+		letter-spacing: -.06em;
+		text-transform: uppercase;
+		color: $info;
+
+		@include media-breakpoint-up(lg) {
+			@include fluid-value(font-size, 12);
+		}
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	&__excerpt {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		padding-left: 40px;
+		padding-right: 40px;
+		font-size: .75rem;
+		line-height: 1.667;
+		opacity: 0;
+		transform: translateY(48px);
+		transition: all 700ms ease;
+
+		@include media-breakpoint-up(lg) {
+			@include fluid-value(padding-left, 40);
+			@include fluid-value(padding-right, 40);
+			@include fluid-value(font-size, 12);
+			transform: translateY(6.25vh);
+		}
+	}
+
+	&:hover {
+		.partner__logo,
+		.partner__header {
+			transform: translateY(-38px);
+
+			@include media-breakpoint-up(lg) {
+				transform: translateY(-4.947917vh);
+			}
+		}
+
+		.partner__excerpt {
+			opacity: 1;
+			transform: translateY(38px);
+
+			@include media-breakpoint-up(lg) {
+				transform: translateY(4.947917vh);
+			}
+		}
+	}
+}

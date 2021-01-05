@@ -1,0 +1,75 @@
+//- Lightbox
+//- ----------------------------------------------
+
+.lightbox {
+	.mp_iframe {
+		display: block;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	&--video {
+		.mp_iframe {
+			position: relative;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				content: "";
+				background-color: rgba(#000, .6);
+				transition: background-color 300ms ease;
+			}
+		}
+
+		&:hover {
+			.mp_iframe:before {
+				background-color: rgba(#000, .5);
+			}
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		right: 50%;
+		bottom: 50%;
+		display: block;
+		overflow: hidden;
+		border-radius: 20%;
+		transform: translateX(50%) translateY(75%) rotate(0deg) skewY(30deg) scaleX(.866) translateZ(0px);
+
+		&,
+		&:after,
+		&:before {
+			width: 1.375rem;
+			height: 1.375rem;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 2rem;
+				height: 2rem;
+			}
+		}
+
+		&:after,
+		&:before {
+			position: absolute;
+			background: $light;
+			pointer-events: auto;
+			content: "";
+		}
+
+		&:after {
+			border-radius: 20% 20% 53% 20%;
+			transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(-30deg) scaleY(.866) translateX(24%) translateZ(0px);
+		}
+
+		&:before {
+			border-radius: 20% 20% 20% 53%;
+			transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(30deg) scaleY(.866) translateX(-24%) translateZ(0px);
+		}
+	}
+}

@@ -1,0 +1,66 @@
+//- Search Panel
+//- ----------------------------------------------
+
+.search-panel {
+	position: fixed;
+	left: 0;
+	z-index: $zindex-search-panel;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: calc(100% - #{$header-height-desktop-mobile});
+	padding: 2rem;
+	background-color: transparent;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0ms, opacity 320ms ease;
+
+	body:not(.cursor-is--active) & {
+		cursor: pointer;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		height: calc(100% - #{$header-height-desktop});
+	}
+
+	.site-header--top ~ & {
+		bottom: 0;
+	}
+
+	.site-header--bottom ~ & {
+		top: 0;
+
+		html.touch & {
+			@include media-breakpoint-down(md) {
+				top: $header-height-desktop-mobile;
+				bottom: 0;
+			}
+		}
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 570px;
+		text-align: center;
+		opacity: 0;
+		transform: translateY(1rem);
+		transition-duration: 0;
+
+		@media (min-width: $xxl-breakpoint) {
+			max-width: 782px;
+		}
+	}
+
+	.site-wrapper--has-search-overlay & {
+		visibility: visible;
+		opacity: 1;
+		background-color: rgba($header-bg-color,.96);
+
+		&__content {
+			opacity: 1;
+			transform: translateY(0);
+			transition: opacity ease 320ms, transform ease 800ms;
+		}
+	}
+}

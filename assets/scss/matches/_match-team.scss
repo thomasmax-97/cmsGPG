@@ -1,0 +1,522 @@
+//- Match Team
+//- ----------------------------------------------
+
+.match-team {
+	display: inline-block;
+	font-weight: $font-weight-bold;
+	letter-spacing: -.03em;
+	text-transform: uppercase;
+	color: $light;
+
+	.match-overview & {
+		text-align: center;
+
+		@include media-breakpoint-between(sm, md) {
+			margin: 0 auto;
+		}
+	}
+
+	.standings-table & {
+		width: 100%;
+	}
+
+	.match-score & {
+		max-width: 33%;
+		flex: 1 0 33%;
+
+		@include media-breakpoint-up(sm) {
+			display: flex;
+			align-items: center;
+		}
+
+		@include media-breakpoint-up(lg) {
+			max-width: 40%;
+			flex: 1 0 40%;
+		}
+
+		@media screen and (min-width: 992px) and (max-width: 1439px) {
+			display: block;
+		}
+	}
+
+	.lineups-table &,
+	.match-stats-widget &,
+	.match-score-inline &,
+	.team-carousel-tabs &  {
+		display: flex;
+		align-items: center;
+	}
+
+	.match-stats-widget & {
+		padding-bottom: 2px;
+	}
+
+	&,
+	&-logo {
+		margin-bottom: 0;
+	}
+
+	&-logo {
+		display: inline-block;
+		position: relative;
+
+		.match-overview & {
+			width: 80px;
+
+			@include media-breakpoint-up(sm) {
+				width: 120px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				width: 180px;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 260px;
+			}
+		}
+
+		.standings-table & {
+			width: 30px;
+			height: 30px;
+			float: left;
+			margin-right: 12px;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 42px;
+				height: 42px;
+				margin-right: 14px;
+			}
+		}
+
+		.upcoming-table & {
+			width: 42px;
+			height: 42px;
+			margin-right: 12px;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 60px;
+				height: 60px;
+			}
+		}
+
+		.match-score & {
+			width: 42px;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 60px;
+			}
+		}
+
+		.match-score-inline & {
+			width: 30px;
+		}
+
+		.lineups-table th & {
+			margin-bottom: 3px;
+
+			@include media-breakpoint-down(xs) {
+				display: none;
+			}
+
+			@media (min-width: 992px) and (max-width: 1199px) {
+				display: none;
+			}
+		}
+
+		img {
+			position: relative;
+			width: 100%;
+		}
+
+		&:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(-45deg);
+			content: "";
+			width: 70%;
+			height: 70%;
+			border-style: solid;
+			border-color: $secondary;
+
+			.match-overview & {
+				border-width: 4px;
+
+				@include media-breakpoint-up(sm) {
+					border-width: 7px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					border-width: 10px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					border-width: 15px;
+				}
+			}
+
+			.lineups-table &,
+			.standings-table &,
+			.match-stats-widget &,
+			.team-carousel-tabs &,
+			.match-score-inline &  {
+				border-width: 2px;
+			}
+		}
+
+		&--team-1 {
+			&:before {
+				border-color: $team-1;
+			}
+		}
+
+		&--team-2 {
+			&:before {
+				border-color: $team-2;
+			}
+		}
+
+		&--team-3 {
+			&:before {
+				border-color: $team-3;
+			}
+		}
+
+		&--team-4 {
+			&:before {
+				border-color: $team-4;
+			}
+		}
+
+		&--team-5 {
+			&:before {
+				border-color: $team-5;
+			}
+		}
+	}
+
+	figcaption {
+		.upcoming-table & {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.match-score & {
+			padding-top: 8px;
+
+			@include media-breakpoint-up(sm) {
+				padding-top: 2px;
+			}
+
+			@media screen and (min-width: 992px) and (max-width: 1439px) {
+				padding-top: 8px;
+			}
+		}
+	}
+
+	&__name {
+		.match-overview &,
+		.standings-table &,
+		.match-stats-widget &,
+		.team-carousel-tabs &  {
+			font-size: .875rem;
+		}
+
+		.match-overview & {
+			margin-top: 12px;
+			line-height: 1;
+
+			@include media-breakpoint-up(sm) {
+				margin-top: 18px;
+				font-size: 1.125rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				margin-top: 24px;
+				font-size: 1.5rem;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-top: 34px;
+				margin-bottom: -1px;
+				font-size: 2.25rem;
+			}
+		}
+
+		.standings-table & {
+			margin-top: 3px;
+			margin-bottom: 1px;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.25rem;
+			}
+		}
+
+		.match-score & {
+			word-wrap: break-word;
+			font-size: .75rem;
+
+			@include media-breakpoint-up(sm) {
+				font-size: 1rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 1.125rem;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.75rem;
+			}
+		}
+
+		.match-score-inline & {
+			font-size: .75rem;
+		}
+	}
+
+	&__country {
+		color: $primary;
+
+		.standings-table & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: .875rem;
+			}
+		}
+
+		.match-overview & {
+			font-size: .75rem;
+			color: $primary;
+
+			@include media-breakpoint-up(sm) {
+				font-size: .875rem;
+			}
+
+			@include media-breakpoint-up(lg) {
+				font-size: 1rem;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.5rem;
+			}
+		}
+
+		.upcoming-table & {
+			display: block;
+			margin-top: 6px;
+			font-size: .75rem;
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-top: 5px;
+				font-size: 1.25rem;
+			}
+		}
+
+		.match-score & {
+			margin-top: 2px;
+			font-size: .625rem;
+
+			@include media-breakpoint-up(sm) {
+				margin-top: 6px;
+				font-size: .75rem;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				margin-top: 5px;
+				font-size: 1.25rem;
+			}
+		}
+
+		.match-score-inline & {
+			font-size: .625rem;
+		}
+
+		.lineups-table &,
+		.match-stats-widget & {
+			font-size: .625rem;
+		}
+	}
+
+	&__result {
+		font-size: .625rem;
+		color: $secondary;
+
+		.match-team--winner & {
+			color: $primary;
+		}
+
+		&.team-blue {
+			color: $msw-blue-color;
+		}
+
+		&.team-red {
+			color: $msw-red-color;
+		}
+	}
+
+	.match-score & {
+		&:first-child {
+			justify-content: flex-start;
+
+			.match-team-logo {
+				@include media-breakpoint-up(sm) {
+					margin-right: 12px;
+				}
+
+				@include media-breakpoint-up(md) {
+					margin-right: 23px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-right: 16px;
+				}
+			}
+
+			figcaption {
+				text-align: left;
+			}
+		}
+
+		&:last-child {
+			justify-content: flex-end;
+
+			.match-team-logo {
+				order: 1;
+
+				@media (max-width: 575px) {
+					float: right;
+				}
+
+				@media screen and (min-width: 992px) and (max-width: 1439px) {
+					float: right;
+					margin-left: 0;
+				}
+
+				@include media-breakpoint-up(sm) {
+					margin-left: 12px;
+				}
+
+				@include media-breakpoint-up(md) {
+					margin-left: 23px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-left: 16px;
+				}
+			}
+
+			figcaption {
+				text-align: right;
+
+				@media (max-width: 575px) {
+					clear: right;
+				}
+
+				@media screen and (min-width: 992px) and (max-width: 1439px) {
+					clear: right;
+				}
+			}
+		}
+	}
+
+	.match-score-inline & {
+		justify-content: flex-start;
+
+		.match-team-logo {
+			margin-right: 11px;
+		}
+	}
+
+	.match-stats-widget &,
+	.team-carousel-tabs & {
+		&:first-child {
+			justify-content: flex-start;
+
+			.match-team-logo {
+				margin-right: 12px;
+			}
+
+			figcaption {
+				text-align: left;
+			}
+		}
+
+		&:last-child {
+			justify-content: flex-end;
+
+			.match-team-logo {
+				order: 1;
+				float: right;
+				margin-left: 12px;
+			}
+
+			figcaption {
+				text-align: right;
+				clear: right;
+			}
+		}
+	}
+
+	.lineups-table th:first-child & {
+		justify-content: flex-start;
+
+		.match-team-logo {
+			margin-right: 12px;
+		}
+
+		figcaption {
+			text-align: left;
+		}
+	}
+
+	.lineups-table th:last-child & {
+		justify-content: flex-end;
+
+		.match-team-logo {
+			order: 1;
+			float: right;
+			margin-left: 12px;
+		}
+
+		figcaption {
+			text-align: right;
+			clear: right;
+		}
+	}
+
+	.match-score__footer & {
+		&-logo {
+			display: none;
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all 700ms ease;
+
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+	}
+
+	.match-score:hover .match-score__footer & {
+		&-logo {
+			@include media-breakpoint-up(lg) {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all 700ms ease 150ms;
+			}
+		}
+	}
+}
+
+//- Match Team List
+//- ----------------------------------------------
+
+.match-team-list {
+	@include list-unstyled;
+	display: flex;
+
+	li {
+		padding-top: 1px;
+		padding-bottom: 3px;
+	}
+}

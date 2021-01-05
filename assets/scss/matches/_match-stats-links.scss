@@ -1,0 +1,258 @@
+//- Match Stats Links
+//- ----------------------------------------------
+
+.match-stats-links {
+	// Match Stats Links -- Default Styles
+	@include list-unstyled;
+	margin-bottom: 0;
+
+	li {
+
+		a {
+			display: block;
+			width: 34px;
+			height: 34px;
+			line-height: 34px;
+			border: 2px solid $secondary;
+			border-radius: 100%;
+			text-align: center;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 44px;
+				height: 44px;
+				line-height: 42px;
+				border-width: 3px;
+			}
+
+			svg {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				fill: $secondary;
+				transition: fill 300ms ease;
+
+				@media (min-width: $xxl-breakpoint) {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			&:hover,
+			&.active {
+				border-color: $primary;
+
+				svg {
+					fill: $light;
+				}
+			}
+		}
+	}
+
+	// Match Stats Links -- Main Styles
+	&--main {
+		@include media-breakpoint-down(md) {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			position: fixed;
+			top: 50%;
+			left: 70px;
+			transform: translateY(-50%);
+		}
+
+		li {
+			display: inline-block;
+
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+
+			& + li {
+				position: relative;
+
+				@include media-breakpoint-down(md) {
+					margin-left: 34px;
+				}
+
+				@include media-breakpoint-up(lg) {
+					margin-top: 38px;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					margin-top: 50px;
+				}
+
+				&:before {
+					position: absolute;
+					content: "";
+
+					@include media-breakpoint-down(md) {
+						width: 30px;
+						top: 16px;
+						right: calc(100% + 4px);
+						border-top: 2px dotted $secondary;
+					}
+
+					@include media-breakpoint-up(lg) {
+						bottom: calc(100% + 4px);
+						left: 16px;
+						height: 30px;
+						border-left: 2px dotted $secondary;
+					}
+
+					@media (min-width: $xxl-breakpoint) {
+						bottom: calc(100% + 9px);
+						left: 20px;
+						height: 32px;
+						border-width: 4px;
+					}
+				}
+			}
+		}
+	}
+
+	// Match Stats Links -- Match Score Styles
+	.match-score &,
+	.match-score-inline & {
+		@include list-unstyled;
+		margin-bottom: 0;
+
+		li {
+			display: inline-block;
+
+			& + li {
+				margin-left: 14px;
+			}
+
+			a {
+				display: block;
+				width: 34px;
+				height: 34px;
+				line-height: 34px;
+				border: 2px solid $secondary;
+				border-radius: 100%;
+				text-align: center;
+
+				@media (min-width: $xxl-breakpoint) {
+					width: 44px;
+					height: 44px;
+					line-height: 42px;
+					border-width: 3px;
+				}
+
+				svg {
+					display: inline-block;
+					width: 12px;
+					height: 12px;
+					fill: $secondary;
+					transition: fill 300ms ease;
+
+					@media (min-width: $xxl-breakpoint) {
+						width: 16px;
+						height: 16px;
+					}
+				}
+
+				&:hover {
+					border-color: $primary;
+
+					svg {
+						fill: $light;
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				transition-delay: 0;
+			}
+
+			&:nth-child(2) {
+				transition-delay: 150ms;
+			}
+
+			&:nth-child(3) {
+				transition-delay: 250ms;
+			}
+
+			&:nth-child(4) {
+				transition-delay: 350ms;
+			}
+		}
+	}
+
+	.match-score & {
+		li {
+			@include media-breakpoint-up(lg) {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: all 700ms ease;
+			}
+		}
+	}
+
+	.match-score-inline & {
+		li {
+			visibility: hidden;
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all 700ms ease;
+		}
+	}
+
+	.match-score:hover &,
+	.match-score-inline:hover & {
+		li {
+			visibility: visible;
+			opacity: 1;
+			transform: translateY(0);
+			transition: all 700ms ease;
+
+			&:nth-child(1) {
+				transition-delay: 150ms;
+			}
+
+			&:nth-child(2) {
+				transition-delay: 250ms;
+			}
+
+			&:nth-child(3) {
+				transition-delay: 350ms;
+			}
+
+			&:nth-child(4) {
+				transition-delay: 450ms;
+			}
+		}
+	}
+}
+
+
+// Alternative color
+.match-stats-links--color-light {
+
+	li {
+
+		a {
+			border-color: rgba(255,255,255,.3);
+
+			svg {
+				fill: rgba(255,255,255,.3);
+			}
+		}
+
+		& + li {
+
+			&::before {
+				@include media-breakpoint-down(md) {
+					border-top-color: rgba(255,255,255,.3);
+				}
+
+				@include media-breakpoint-up(lg) {
+					border-left-color: rgba(255,255,255,.3);
+				}
+			}
+		}
+	}
+}

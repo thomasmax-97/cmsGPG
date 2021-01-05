@@ -1,0 +1,115 @@
+//- Widget: Default
+//- ----------------------------------------------
+
+.widget {
+	&__title,
+	&__content {
+
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-size: 1.25rem;
+
+		.menu-panel & {
+			color: $light;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.75rem;
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+
+	&__content {
+		.menu-panel & {
+			font-size: .75rem;
+			color: $body-color-dark;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1rem;
+				line-height: 1.625em;
+			}
+		}
+	}
+}
+
+.widget.slick-slider {
+	position: relative;
+	height: calc(100vh - #{$header-height-desktop-mobile});
+
+	@media (min-width: $xxl-breakpoint) {
+		height: calc(100vh - #{$header-height-desktop});
+	}
+
+	.slick-dots {
+		@include list-unstyled;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 8px;
+		margin-bottom: 0;
+		text-align: center;
+
+		@media (min-width: $xxl-breakpoint) {
+			bottom: 45px;
+		}
+
+		li {
+			position: relative;
+			display: inline-block;
+			width: 18px;
+			height: 10px;
+			margin: 0 2px;
+			border: none;
+			outline: none;
+			font-size: 0;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 30px;
+				margin-left: 4px;
+				margin-right: 4px;
+			}
+
+			body:not(.cursor-is--active) & {
+				cursor: pointer;
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 4px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background-color: $light;
+				transition: .3s all ease;
+
+				@media (min-width: $xxl-breakpoint) {
+					height: 4px;
+				}
+			}
+
+			button {
+				display: none;
+			}
+
+			&:hover,
+			&.slick-active {
+				&:before {
+					background-color: $primary;
+				}
+			}
+
+			&:hover {
+				&:before {
+					height: 4px;
+
+					@media (min-width: $xxl-breakpoint) {
+						height: 8px;
+					}
+				}
+			}
+		}
+	}
+}

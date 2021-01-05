@@ -1,0 +1,202 @@
+//- Post Sharing
+//- ----------------------------------------------
+
+.post {
+	&__sharing {
+		@include list-unstyled;
+
+		@include media-breakpoint-down(md) {
+			display: flex;
+			justify-content: flex-end;
+			margin-right: -24px;
+			margin-bottom: -24px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			position: fixed;
+			right: 0;
+			margin-bottom: 0;
+
+			.site-header--top ~ .site-content & {
+				bottom: 0;
+			}
+
+			.site-header--bottom ~ .site-content & {
+				top: 0;
+			}
+		}
+
+		li {
+			width: 40px;
+			height: 40px;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 60px;
+				height: 60px;
+			}
+		}
+
+		&-item {
+			transition: .3s opacity ease;
+
+			&--menu {
+				position: relative;
+				background-color: $dark;
+
+				a {
+					display: block;
+					height: 100%;
+				}
+
+				$pixel: 2px;
+				$pixel-lg: 4px;
+
+				$color: $light;
+
+				i {
+					display: block;
+					position: relative;
+					height: $pixel * 8;
+					width: $pixel * 8;
+					transition: background 0.3s;
+					top: 50%;
+					left: 50%;
+					transform: translate3d(-50%, -50%, 0px);
+
+					@media (min-width: $xxl-breakpoint) {
+						height: $pixel-lg * 8;
+						width: $pixel-lg * 8;
+					}
+
+					body:not(.cursor-is--active) & {
+						cursor: pointer;
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate3d(-50%, -50%, 0px);
+						height: $pixel;
+						width: $pixel;
+						background-color: $color;
+						box-shadow: ($pixel * -2) ($pixel * -2) 0 0 $color,
+									($pixel * 0) ($pixel * -2) 0 0 $color,
+									($pixel * 2) ($pixel * -2) 0 0 $color,
+									($pixel * -2) ($pixel * 0) 0 0 $color,
+									($pixel * 2) ($pixel * 0) 0 0 $color,
+									($pixel * -2) ($pixel * 2) 0 0 $color,
+									($pixel * 0) ($pixel * 2) 0 0 $color,
+									($pixel * 2) ($pixel * 2) 0 0 $color;
+						transition: box-shadow 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+						@media (min-width: $xxl-breakpoint) {
+							height: $pixel-lg;
+							width: $pixel-lg;
+							box-shadow: ($pixel-lg * -2) ($pixel-lg * -2) 0 0 $color,
+										($pixel-lg * 0) ($pixel-lg * -2) 0 0 $color,
+										($pixel-lg * 2) ($pixel-lg * -2) 0 0 $color,
+										($pixel-lg * -2) ($pixel-lg * 0) 0 0 $color,
+										($pixel-lg * 2) ($pixel-lg * 0) 0 0 $color,
+										($pixel-lg * -2) ($pixel-lg * 2) 0 0 $color,
+										($pixel-lg * 0) ($pixel-lg * 2) 0 0 $color,
+										($pixel-lg * 2) ($pixel-lg * 2) 0 0 $color;
+						}
+					}
+				}
+
+				a:hover i:after {
+					background: none;
+					box-shadow: ($pixel * -3) ($pixel * -3) 0 0 transparent,
+								($pixel * 1) ($pixel * -2) 0 0 $color,
+								($pixel * 3) ($pixel * -3) 0 0 transparent,
+								($pixel * 1) ($pixel * 2) 0 0 $color,
+								($pixel * 0) ($pixel * -1) 0 0 $color,
+								($pixel * -3) ($pixel * 3) 0 0 transparent,
+								($pixel * 0) ($pixel * 1) 0 0 $color,
+								($pixel * 3) ($pixel * 3) 0 0 transparent,
+								($pixel * -1) ($pixel * 0) 0 0 $color;
+
+					@media (min-width: $xxl-breakpoint) {
+						box-shadow: ($pixel-lg * -3) ($pixel-lg * -3) 0 0 transparent,
+									($pixel-lg * 1) ($pixel-lg * -2) 0 0 $color,
+									($pixel-lg * 3) ($pixel-lg * -3) 0 0 transparent,
+									($pixel-lg * 1) ($pixel-lg * 2) 0 0 $color,
+									($pixel-lg * 0) ($pixel-lg * -1) 0 0 $color,
+									($pixel-lg * -3) ($pixel-lg * 3) 0 0 transparent,
+									($pixel-lg * 0) ($pixel-lg * 1) 0 0 $color,
+									($pixel-lg * 3) ($pixel-lg * 3) 0 0 transparent,
+									($pixel-lg * -1) ($pixel-lg * 0) 0 0 $color;
+					}
+				}
+			}
+
+			&--comments {
+				background-color: $secondary;
+
+				a {
+					position: relative;
+					display: block;
+					width: 100%;
+					height: 100%;
+					line-height: 46px;
+					text-align: center;
+
+					@media (min-width: $xxl-breakpoint) {
+						line-height: 66px;
+					}
+				}
+
+				span {
+					position: absolute;
+					bottom: 3px;
+					right: 9px;
+					font-size: .5rem;
+					font-weight: $font-weight-bold;
+					color: $light;
+
+					@media (min-width: $xxl-breakpoint) {
+						bottom: 6px;
+						right: 12px;
+						font-size: .75rem;
+					}
+				}
+
+				svg {
+					width: 10px;
+					height: 10px;
+					fill: $light;
+
+					@media (min-width: $xxl-breakpoint) {
+						width: 15px;
+						height: 15px;
+					}
+				}
+			}
+
+			&:not(.post__sharing-item--menu):hover {
+				opacity: .75;
+			}
+		}
+
+		a {
+			display: block;
+
+			&:before {
+				@extend %fa-icon;
+				@extend .fab;
+				display: block;
+				font-size: .75rem;
+				line-height: 40px;
+				text-align: center;
+				color: $light;
+
+				@media (min-width: $xxl-breakpoint) {
+					font-size: 1rem;
+					line-height: 60px;
+				}
+			}
+		}
+	}
+}

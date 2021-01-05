@@ -1,0 +1,49 @@
+//- Overlay
+//- ----------------------------------------------
+.site-overlay {
+	left: 0;
+	z-index: $zindex-overlay;
+	width: 100%;
+	height: calc(100% - #{$header-height-desktop-mobile});
+	position: fixed;
+	background-color: transparent;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s,opacity 320ms ease;
+
+	body:not(.cursor-is--active) & {
+		cursor: pointer;
+	}
+
+	@media (min-width: $xxl-breakpoint) {
+		height: calc(100% - #{$header-height-desktop});
+	}
+
+	.site-header--top ~ & {
+		bottom: 0;
+	}
+
+	.site-header--bottom ~ & {
+		top: 0;
+
+		html.touch & {
+			@include media-breakpoint-down(md) {
+				top: $header-height-desktop-mobile;
+				bottom: 0;
+			}
+		}
+	}
+	
+	.site-wrapper--has-overlay &,
+	.site-wrapper--has-redeem-overlay & {
+		visibility: visible;
+		opacity: 1;
+		background-color: rgba($header-bg-color,.96);
+	}
+
+	.site-wrapper--has-redeem-overlay & {
+		height: 100%;
+		z-index: $zindex-redeem-o;
+	}
+}
+

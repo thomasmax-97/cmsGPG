@@ -1,0 +1,55 @@
+//- Widget: Posts Partners
+//- ----------------------------------------------
+
+.widget-partners-carousel {
+	position: relative;
+
+	.widget__title {
+		display: inline-block;
+	}
+
+	ul {
+		@include list-unstyled;
+		margin: 0;
+		padding: 0;
+
+		img {
+			max-width: 165px;
+		}
+	}
+
+	.slick-arrow {
+		position: absolute;
+		top: 0;
+		width: 20px;
+		padding: 2px 0;
+		border: none;
+		background-color: transparent;
+		font-size: 0;
+		outline: 0;
+		z-index: 1;
+		text-align: center;
+
+		body:not(.cursor-is--active) & {
+			cursor: pointer;
+		}
+
+		svg {
+			display: inline-block;
+			fill: $light;
+			width: 8px;
+			height: 14px;
+			transition: fill 300ms ease;
+		}
+
+		&:hover {
+			svg {
+				fill: $primary;
+			}
+		}
+	}
+
+	.slick-next {
+		margin-left: 28px;
+	}
+}

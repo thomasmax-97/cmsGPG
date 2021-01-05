@@ -1,0 +1,6 @@
+// CSS variables
+:root {
+	@each $color, $value in $theme-colors {
+		--#{$color}: #{$value};
+	}
+}

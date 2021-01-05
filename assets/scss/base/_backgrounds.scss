@@ -1,0 +1,194 @@
+//- Backgrounds
+//- ----------------------------------------------
+
+.bg-image {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: $body-color;
+}
+
+.bg-fixed {
+	background-attachment: fixed;
+}
+
+
+
+/**
+ *
+ * Page Backgrounds
+ *
+ */
+
+.bg--texture-01 {
+	background-image: url("../img/bg-texture-01.jpg");
+}
+
+.bg--texture-02 {
+	background-image: url("../img/bg-texture-02.jpg");
+}
+
+.bg--texture-03 {
+	background-image: url("../img/bg-texture-03.jpg");
+}
+
+.bg--texture-04 {
+	background-image: url("../img/bg-texture-04.jpg");
+}
+
+.bg--texture-05 {
+	background-image: url("../img/bg-texture-05.jpg");
+}
+
+.bg--texture-06 {
+	background-image: url("../img/bg-texture-06.jpg");
+}
+
+.bg--texture-07 {
+	background-image: url("../img/bg-texture-07.jpg");
+}
+
+
+/**
+ *
+ * Page Textures
+ * adds dotted pattern over the background
+ *
+ */
+
+.bg--dotted-3x3 {
+
+	&::before {
+		content: "";
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url(../img/3x3-black.gif);
+		background-repeat: repeat;
+		background-position: 50% 0;
+		z-index: -1;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+			background-image: url(../img/3x3-black@2x.gif);
+			background-size: 3px 3px;
+		}
+	}
+}
+
+
+/**
+ *
+ * Matches Backgrounds
+ *
+ */
+
+.bg--matches-01 {
+	background-image: url("../img/bg-matches-01.jpg");
+}
+
+.bg--matches-02 {
+	background-image: url("../img/bg-matches-02.jpg");
+}
+
+.bg--matches-03 {
+	background-image: url("../img/bg-matches-03.jpg");
+}
+
+
+/**
+ *
+ * Shop Backgrounds
+ *
+ */
+
+.bg--product-color-01 {
+	background-color: $dark;
+}
+
+.bg--product-color-02 {
+	background-color: $danger;
+}
+
+.bg--product-color-03 {
+	background-color: $body-color-dark;
+}
+
+
+/**
+ *
+ * Element Backgrounds
+ *
+ */
+ .bg--ph-01 {
+	background-image: url("../img/page-heading-img-01.jpg");
+}
+
+.bg--ph-02 {
+	background-image: url("../img/page-heading-img-02.jpg");
+}
+
+.bg--ph-03 {
+	background-image: url("../img/page-heading-img-03.jpg");
+}
+
+.bg--ph-04 {
+	background-image: url("../img/page-heading-img-04.jpg");
+}
+
+.bg--ph-05 {
+	background-image: url("../img/page-heading-img-05.jpg");
+}
+
+.bg--ph-06 {
+	background-image: url("../img/page-heading-img-06.jpg");
+}
+
+.bg--checkout-login {
+	background-image: url("../img/checkout-login-bg.jpg");
+}
+
+.bg--checkout-redeem {
+	background-image: url("../img/checkout-redeem-bg.jpg");
+}
+
+
+/**
+ *
+ * Borders
+ *
+ */
+
+.bc-color-pallete-01 {
+	border-color: $dark;
+}
+
+.bc-color-pallete-02 {
+	border-color: $body-color;
+}
+
+.bc-color-pallete-03 {
+	border-color: $secondary;
+}
+
+.bc-color-pallete-04 {
+	border-color: $info;
+}
+
+.bc-color-pallete-05 {
+	border-color: $warning;
+}
+
+.bc-color-pallete-06 {
+	border-color: $danger;
+}
+
+.bc-color-pallete-07 {
+	border-color: $success;
+}
+
+.bc-color-pallete-08 {
+	border-color: $primary;
+}

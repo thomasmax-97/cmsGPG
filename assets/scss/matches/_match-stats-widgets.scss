@@ -1,0 +1,283 @@
+//- Match Stats Widgets
+//- ----------------------------------------------
+
+.match-stats {
+
+	&-container {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include media-breakpoint-up(lg) {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	&-widget {
+		// Main Styles
+		width: 100%;
+		font-size: .75rem;
+		font-weight: $font-weight-bold;
+		line-height: 1;
+		letter-spacing: -.03em;
+		text-transform: uppercase;
+		color: $light;
+
+		.match-stats-container & {
+			@include media-breakpoint-up(lg) {
+				margin-left: 7px;
+				margin-right: 7px;
+				max-width: 250px;
+			}
+
+			@media (min-width: 1200px) {
+				margin-left: 25px;
+				margin-right: 25px;
+				max-width: 290px;
+			}
+		}
+
+		& + & {
+			@include media-breakpoint-down(md) {
+				margin-top: 30px;
+			}
+		}
+
+		&__header {
+			margin-bottom: 11px;
+			font-size: .875rem;
+			letter-spacing: -.06em;
+		}
+
+		&__item,
+		&__body {
+			@include list-unstyled;
+			width: 100%;
+			margin-bottom: 0;
+
+			> li {
+				padding: 19px 24px 17px;
+				vertical-align: middle;
+				border-color: rgba($secondary, .2);
+
+				& + li {
+					border-top-width: 1px;
+					border-top-style: solid;
+				}
+
+				&:first-child {
+					border-top: none;
+				}
+
+				&:nth-child(odd) {
+					background-color: $dark;
+				}
+
+				&:nth-child(even) {
+					background-color: #13151e;
+				}
+
+				& > span:last-child {
+					text-align: right;
+
+					& > span {
+						display: block;
+						font-size: .625rem;
+					}
+				}
+			}
+		}
+
+		li {
+			position: relative;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 100%;
+				content: "";
+			}
+
+			&.team-blue {
+				&:before {
+					background-color: $msw-blue-color;
+				}
+			}
+
+			&.team-red {
+				&:before {
+					background-color: $msw-red-color;
+				}
+			}
+		}
+
+		// Widget General
+		&__body {
+			.match-stats-widget--general & {
+
+				> li {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					.match-team-list {
+
+						li {
+
+							img {
+								margin-right: 2px;
+							}
+
+							&:last-child {
+
+								img {
+									margin-right: 0;
+								}
+							}
+						}
+					}
+
+				}
+
+				> li {
+					& > span:first-child {
+						color: $secondary;
+					}
+				}
+			}
+		}
+
+		&--general {
+			.match-team:last-child {
+				text-align: right;
+			}
+		}
+
+		// Widget Leaders
+		&__item {
+			.match-stats-widget--leaders & {
+				> li {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+
+					&:first-child {
+						padding-left: 0;
+						padding-top: 0;
+						padding-bottom: 0;
+					}
+
+					& > span:first-child {
+						color: $secondary;
+					}
+				}
+
+				& + * {
+					margin-top: 14px;
+				}
+			}
+		}
+
+		// Widget Matchup
+		&__body {
+			.match-stats-widget--matchup & {
+			}
+		}
+
+		&__achievements {
+			display: flex;
+			justify-content: space-between;
+
+			.match-stats-widget & {
+				padding-top: 22px;
+				padding-bottom: 20px;
+			}
+
+			ul {
+				@include list-unstyled;
+
+				li {
+					display: inline-block;
+				}
+
+				img {
+					margin-top: -2px;
+				}
+
+				&:first-child {
+					li + li {
+						margin-left: 8px;
+					}
+
+					img {
+						margin-right: 6px;
+					}
+				}
+
+				&:last-child {
+					li,
+					img {
+						float: right;
+					}
+
+					li + li {
+						margin-right: 8px;
+					}
+
+					img {
+						margin-left: 6px;
+					}
+				}
+			}
+		}
+
+		&__details {
+			ul {
+				@include list-unstyled;
+				display: flex;
+				justify-content: space-between;
+				text-align: center;
+
+				svg {
+					display: block;
+					width: 20px;
+					height: 20px;
+					margin-top: 1px;
+					margin-bottom: 11px;
+					fill: $light;
+				}
+
+				.team-blue {
+					color: $msw-blue-color;
+				}
+
+				.team-red {
+					color: $msw-red-color;
+				}
+
+				.team-1 {
+					color: $team-1;
+				}
+
+				.team-2 {
+					color: $team-2;
+				}
+
+				.team-3 {
+					color: $team-3;
+				}
+
+				.team-4 {
+					color: $team-4;
+				}
+
+				.team-5 {
+					color: $team-5;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,163 @@
+/* Custom Select
+/* ------------------------- */
+
+/* Default custom select styles */
+div.cs-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	z-index: 100;
+	width: 100%;
+	user-select: none;
+
+	&:focus {
+		outline: none; /* For better accessibility add a style for this in your skin */
+	}
+}
+
+.cs-select {
+	select {
+		display: none;
+	}
+
+	span {
+		position: relative;
+		display: block;
+		padding: 24px 24px;
+		font-size: .75rem;
+		font-weight: 700;
+		line-height: 1;
+		white-space: nowrap;
+		text-transform: uppercase;
+		text-overflow: ellipsis;
+		color: $light;
+		overflow: hidden;
+
+		body:not(.cursor-is--active) & {
+			cursor: pointer;
+		}
+
+		@include media-breakpoint-up(md) {
+			padding-top: 36px;
+			padding-bottom: 24px;
+		}
+	}
+
+	/* Placeholder and selected option */
+	> span {
+		padding-right: 3em;
+
+		&:after,
+		&:before {
+			speak: none;
+			position: absolute;
+			content: "";
+			background-color: $primary;
+			transition: opacity 300ms ease;
+		}
+
+		&:before {
+			top: 38px;
+			right: 20px;
+			width: 2px;
+			height: 6px;
+		}
+
+		&:after {
+			top: 40px;
+			right: 18px;
+			width: 6px;
+			height: 2px;
+		}
+	}
+
+	&.cs-active {
+		> span::before {
+			opacity: 0;
+		}
+	}
+
+	/* Options */
+	.cs-options {
+		overflow: hidden;
+		visibility: hidden;
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 100%;
+		opacity: 0;
+		transform: translateY(-1rem);
+		transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s;
+
+		.site-header--top & {
+			border-top: 2px solid transparent;
+
+			@media (min-width: $xxl-breakpoint) {
+				border-top-width: 4px;
+			}
+		}
+
+		.site-header--bottom & {
+			top: auto;
+			bottom: 100%;
+			transform: translateY(1rem);
+			border-bottom: 2px solid transparent;
+
+			@media (min-width: $xxl-breakpoint) {
+				border-bottom-width: 4px;
+			}
+		}
+	}
+
+	&.cs-active .cs-options {
+		visibility: visible;
+		opacity: 1;
+		transform: translate(0);
+		transition-delay: 0s, 0s, 0.3s;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 16px 0;
+		width: 100%;
+		background-color: $header-bg-color;
+	}
+
+	ul span {
+		padding: 6.5px 24px;
+		font-size: .625rem;
+		transition: color 300ms ease;
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: .8125rem;
+		}
+	}
+
+	ul li.cs-focus span {
+		background-color: #ddd;
+	}
+
+	/* Optgroup and optgroup label */
+	li.cs-optgroup ul {
+		padding-left: 1em;
+	}
+
+	li.cs-optgroup > span {
+		cursor: default;
+	}
+
+	li span:hover,
+	li.cs-selected span {
+		color: $primary;
+	}
+}
+
+div.cs-active {
+	z-index: 200;
+}
+
+.cs-selected {
+	color: $primary;
+}

@@ -1,0 +1,85 @@
+//- Info Box
+//- ----------------------------------------------
+.info-box {
+	&__label,
+	&__content {
+		font-weight: $font-weight-bold;
+		letter-spacing: -.03em;
+		text-transform: uppercase;
+	}
+
+	&__label {
+		font-size: .75rem;
+		line-height: .95;
+		color: $info;
+
+		.menu-panel & {
+			margin-bottom: -1px;
+			font-size: .625rem;
+			color: $secondary;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: .875rem;
+			}
+		}
+
+		.contact-us-page & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: .875rem;
+			}
+		}
+	}
+
+	&__content {
+		.contact-us-page & {
+			@media (min-width: $xxl-breakpoint) {
+				margin-top: -3px;
+			}
+		}
+
+		.menu-panel & {
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.125rem;
+			}
+		}
+
+		&,
+		a,
+		a[href^="mailto:"] {
+			.menu-panel & {
+				color: $light;
+			}
+		}
+
+		a[href^="mailto:"] {
+			.contact-us-page & {
+				@media (min-width: $xxl-breakpoint) {
+					font-size: 1.125rem;
+				}
+			}
+		}
+	}
+
+	* + & {
+		margin-top: 31px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 36px;
+		}
+
+		.menu-panel & {
+			margin-top: 25px;
+		}
+	}
+
+	& + & {
+		.menu-panel & {
+			margin-top: 19px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			margin-top: 25px;
+		}
+	}
+}

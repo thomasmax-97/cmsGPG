@@ -1,0 +1,604 @@
+//- Base
+//- ----------------------------------------------
+
+//- Colors
+//- ----------------------------------------------
+$body-bg:         #fff;
+$body-color:      #222430;
+$body-color-dark: #c6cbea;
+$tiny-color:      #5e627e;
+
+$primary:   #a3ff12;
+$secondary: #5e627e;
+$tertiary:  #222430;
+$success:   #88df00;
+$info:      #ced0da;
+$warning:   #ffcc00;
+$danger:    #ff1c5c;
+$light:     #fff;
+$dark:      #151720;
+
+$theme-colors: ();
+$theme-colors: map-merge((
+	"primary":    $primary,
+	"secondary":  $secondary,
+	"tertiary":   $tertiary,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark
+), $theme-colors);
+// stylelint-enable
+
+//- Teams Colors
+//- ----------------------------------------------
+$team-1: #a3ff12;
+$team-2: #6e4aff;
+$team-3: #d51633;
+$team-4: #faca21;
+$team-5: #0090ff;
+
+// Team Selection
+$tm-team-1: #197aff;
+$tm-team-2: #5d26fb;
+$tm-team-3: #ffde00;
+$tm-team-4: #ff311c;
+$tm-team-5: $primary;
+
+$team-colors: ();
+$team-colors: map-merge((
+	"team-1": $tm-team-1,
+	"team-2": $tm-team-2,
+	"team-3": $tm-team-3,
+	"team-4": $tm-team-4,
+	"team-5": $tm-team-5,
+), $team-colors);
+
+//- Landing Details Colors
+//- ----------------------------------------------
+$landing-detail-color-1: #68ff01;
+$landing-detail-color-2: #ccff3a;
+
+//- Cursor
+//- ----------------------------------------------
+$cursor-color-dot: $primary;
+$cursor-color-dot-opacity: 1;
+$cursor-color-border: $primary;
+$cursor-color-border-opacity: .5;
+$cursor-size: 30px;
+$cursor-dot-size: 6px;
+
+//- Social Colors
+//- ----------------------------------------------
+$social-discordapp: #7289da;
+$social-dribbble: #ea4c89;
+$social-facebook : #224bc0;
+$social-instagram: #d42d93;
+$social-linkedin: #0077b5;
+$social-medium: #12100e;
+$social-mixer: #002050;
+$social-ok: #f4731c;
+$social-pinterest: #bd081c;
+$social-quora: #b92b27;
+$social-reddit: #ff4500;
+$social-skype: #00aff0;
+$social-snapchat: #fffc00;
+$social-soundcloud: #ff3300;
+$social-steampowered: #000000;
+$social-telegram: #2ca5e0;
+$social-tumblr: #36465d;
+$social-twitter: #09aafe;
+$social-twitch: #5e22e4;
+$social-vimeo: #1ab7ea;
+$social-vk: #6383a8;
+$social-wechat: #7bb32e;
+$social-weibo: #e6162d;
+$social-whatsapp: #25d366;
+$social-xing: #006567;
+$social-youtube: #ff0000;
+
+
+//- Decoration
+//- ----------------------------------------------
+
+// Decor
+// color default
+$decor-layer-1-bg: #487500;
+$decor-layer-1-gradient-start: #73bb00;
+$decor-layer-1-gradient-stop: #1d3000;
+
+$decor-layer-2-bg: #85da00;
+$decor-layer-2-gradient-start: #b6e900;
+$decor-layer-2-gradient-stop: #55cc00;
+
+$decor-layer-3-bg: #a3ff12;
+$decor-layer-3-gradient-start: #c8ff19;
+$decor-layer-3-gradient-stop: #7fff0b;
+
+$decor-line: #f3ff38;
+
+// Decor Player
+// color default
+$decor-page-layer-1-bg: #487500;
+$decor-page-layer-1-gradient-start: #73bb00;
+$decor-page-layer-1-gradient-stop: #1d3000;
+
+$decor-page-layer-2-bg: #7dcd00;
+$decor-page-layer-2-gradient-start: #a0e700;
+$decor-page-layer-2-gradient-stop: #29a000;
+
+$decor-page-layer-3-bg: #85da00;
+$decor-page-layer-3-gradient-start: #e7f800;
+$decor-page-layer-3-gradient-stop: #24bd00;
+
+$decor-page-line: #f3ff38;
+
+// color 2
+$decor-page-color-2-layer-1-bg: #bd2400;
+$decor-page-color-2-layer-1-gradient-start: #e52e00;
+$decor-page-color-2-layer-1-gradient-stop: #690c00;
+
+$decor-page-color-2-layer-2-bg: #d23b00;
+$decor-page-color-2-layer-2-gradient-start: #ed4b00;
+$decor-page-color-2-layer-2-gradient-stop: #981300;
+
+$decor-page-color-2-layer-3-bg: #ff5c1c;
+$decor-page-color-2-layer-3-gradient-start: #ffa632;
+$decor-page-color-2-layer-3-gradient-stop: #ff1306;
+
+// color 3
+$decor-page-color-3-layer-1-bg: #003681;
+$decor-page-color-3-layer-1-gradient-start: #0056cc;
+$decor-page-color-3-layer-1-gradient-stop: #001636;
+
+$decor-page-color-3-layer-2-bg: #0055c9;
+$decor-page-color-3-layer-2-gradient-start: #0087e9;
+$decor-page-color-3-layer-2-gradient-stop: #0023a9;
+
+$decor-page-color-3-layer-3-bg: #197aff;
+$decor-page-color-3-layer-3-gradient-start: #2ddbff;
+$decor-page-color-3-layer-3-gradient-stop: #051aff;
+
+// color 4
+$decor-page-color-4-layer-1-bg: #1d0a54;
+$decor-page-color-4-layer-1-gradient-start: #2e1086;
+$decor-page-color-4-layer-1-gradient-stop: #0c0422;
+
+$decor-page-color-4-layer-2-bg: #4114c3;
+$decor-page-color-4-layer-2-gradient-start: #6820e7;
+$decor-page-color-4-layer-2-gradient-stop: #1b089f;
+
+$decor-page-color-4-layer-3-bg: #4815d9;
+$decor-page-color-4-layer-3-gradient-start: #8126f7;
+$decor-page-color-4-layer-3-gradient-stop: #0f04bb;
+
+// color 5
+$decor-page-color-5-layer-1-bg: #550014;
+$decor-page-color-5-layer-1-gradient-start: #870020;
+$decor-page-color-5-layer-1-gradient-stop: #230008;
+
+$decor-page-color-5-layer-2-bg: #830025;
+$decor-page-color-5-layer-2-gradient-start: #cd003b;
+$decor-page-color-5-layer-2-gradient-stop: #39000f;
+
+$decor-page-color-5-layer-3-bg: #97002b;
+$decor-page-color-5-layer-3-gradient-start: #ea004d;
+$decor-page-color-5-layer-3-gradient-stop: #440009;
+
+
+//- Components
+//- ----------------------------------------------
+$border-width: 2px;
+
+//- Fonts
+//- ----------------------------------------------
+$font-family-base:   'Rajdhani', sans-serif;
+$font-family-accent: 'Montserrat', sans-serif;
+$font-size-base:     1rem; // Assumes the browser default, typically `16px`
+$font-size-lg:       1.25rem;
+$font-size-sm:       .875rem;
+
+$font-weight-normal: normal;
+$font-weight-bold:   bold;
+
+$font-weight-base:   $font-weight-normal;
+$line-height-base:   1.5;
+
+$h1-font-size: 6.375rem;
+$h2-font-size: 4.5rem;
+$h3-font-size: 2.875rem;
+$h4-font-size: 2rem;
+$h5-font-size: 1.375rem;
+$h6-font-size: 1.125rem;
+
+$headings-margin-bottom: $spacer * 1.125;
+$headings-font-family:   $font-family-base;
+$headings-font-weight:   700;
+$headings-line-height:   .875;
+$headings-color:         $body-color;
+
+$lead-font-size:   1.25rem;
+$lead-font-weight: 300;
+
+$small-font-size: .625rem;
+
+$text-muted: $gray-600;
+
+$blockquote-small-color:  $gray-600;
+$blockquote-font-size:    ($font-size-base * 1.25);
+
+$hr-border-color: #333;
+$hr-border-width: $border-width;
+
+$mark-padding: .2em;
+
+$dt-font-weight: $font-weight-bold;
+
+$kbd-box-shadow:         inset 0 -.1rem 0 rgba($black,.25);
+$nested-kbd-font-weight: $font-weight-bold;
+
+$list-inline-padding: 5px;
+
+$mark-bg: #fcf8e3;
+
+
+//- Links
+//- ----------------------------------------------
+$link-color:            $light;
+$link-decoration:       none;
+$link-hover-color:      $primary;
+$link-hover-decoration: none;
+
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:       .8rem;
+$input-btn-padding-x:       0;
+$input-btn-line-height:     $line-height-base;
+$input-btn-font-size:       0.75rem; // check
+
+$input-btn-padding-y-sm:    .35rem;
+$input-btn-padding-x-sm:    0;
+$input-btn-line-height-sm:  1.5;
+$input-btn-font-size-sm:    .625rem; // check
+
+$input-btn-padding-y-lg:    1rem;
+$input-btn-padding-x-lg:    0;
+$input-btn-line-height-lg:  1.5;
+$input-btn-font-size-lg:    .875rem; // check
+
+$input-btn-border-width:    $border-width;
+
+
+//- Buttons
+//- ----------------------------------------------
+$btn-padding-y:       .875rem;
+$btn-padding-x:       1.875rem;
+$btn-line-height:     1;
+$btn-font-size:       .75rem;
+
+$btn-padding-y-sm:    .6875rem;
+$btn-padding-x-sm:    1.25rem;
+$btn-line-height-sm:  1;
+$btn-font-size-sm:    .625rem;
+
+$btn-padding-y-lg:    1.1875rem;
+$btn-padding-x-lg:    2.75rem;
+$btn-line-height-lg:  1;
+$btn-font-size-lg:    1rem;
+
+$btn-border-width:    $border-width;
+
+$btn-font-family:                $font-family-base;
+$btn-font-weight:                $font-weight-bold;
+$btn-box-shadow:                 none;
+$btn-focus-box-shadow:           none;
+$btn-active-box-shadow:          none;
+
+$btn-link-disabled-color:        $gray-600;
+
+$btn-block-spacing-y:            .5rem;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:              1.5rem;
+$btn-border-radius-lg:           2rem;
+$btn-border-radius-sm:           1rem;
+
+$btn-transition:                 all .15s ease-in-out;
+
+
+
+//- Forms
+//- ----------------------------------------------
+$input-padding-y:                       $input-btn-padding-y;
+$input-padding-x:                       $input-btn-padding-x;
+$input-line-height:                     $input-btn-line-height;
+// $input-btn-font-size:       0.75rem;
+
+$input-padding-y-sm:                    $input-btn-padding-y-sm;
+$input-padding-x-sm:                    $input-btn-padding-x-sm;
+$input-line-height-sm:                  $input-btn-line-height-sm;
+// $input-btn-font-size-sm:    .625rem;
+
+$input-padding-y-lg:                    $input-btn-padding-y-lg;
+$input-padding-x-lg:                    $input-btn-padding-x-lg;
+$input-line-height-lg:                  $input-btn-line-height-lg;
+// $input-btn-font-size-lg:    .875rem;
+
+$input-bg:                       transparent;
+$input-disabled-bg:              $gray-200;
+
+$input-color:                    $body-color;
+$input-border-color:             #dfe0e5;
+$input-active-border-color:      $success;
+$input-border-width:             1px;
+$input-box-shadow:               none;
+
+$input-btn-focus-width:          0;
+$input-btn-focus-color:          transparent;
+$input-btn-focus-box-shadow:     0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-border-radius:            0;
+$input-border-radius-lg:         0;
+$input-border-radius-sm:         0;
+
+$input-focus-bg:                 $input-bg;
+$input-focus-border-color:       $light;
+$input-focus-box-shadow:         none;
+$input-focus-color:              $input-color;
+
+$input-placeholder-color:        #6c6c6c;
+
+$input-height-border:           $input-btn-border-width * 2;
+
+$input-height-inner:            ($font-size-base * $input-btn-line-height) + ($input-btn-padding-y * 2);
+$input-height:                  calc(#{$input-height-inner} + #{$input-height-border});
+
+$input-height-inner-sm:         ($font-size-sm * $input-btn-line-height-sm) + ($input-btn-padding-y-sm * 2);
+$input-height-sm:               calc(#{$input-height-inner-sm} + #{$input-height-border});
+
+$input-height-inner-lg:         ($font-size-sm * $input-btn-line-height-lg) + ($input-btn-padding-y-lg * 2);
+$input-height-lg:               calc(#{$input-height-inner-lg} + #{$input-height-border});
+
+$input-transition:              border-color ease-in-out .15s;
+
+$form-text-color:               $body-color-dark;
+
+$form-text-margin-top:          .25rem;
+
+$form-group-margin-bottom:      1.5rem;
+
+
+// Custom Checkbox
+$custom-control-gutter:                 2rem;
+$custom-control-spacer-y:               .25rem;
+$custom-control-spacer-x:               1rem;
+
+$custom-control-indicator-size:         1.125rem;
+$custom-control-indicator-bg:           transparent;
+$custom-control-indicator-bg-size:      13px 10px;
+$custom-control-indicator-box-shadow:   none;
+
+$custom-control-indicator-border:         2px solid $secondary;
+$custom-control-indicator-border-checked: 2px solid $primary;
+
+$custom-control-indicator-disabled-bg:          $gray-200;
+$custom-control-description-disabled-color:     $gray-600;
+
+$custom-control-indicator-checked-color:        $white;
+$custom-control-indicator-checked-bg:           $primary;
+$custom-control-indicator-checked-box-shadow:   none;
+
+$custom-control-indicator-focus-box-shadow:     0 0 0 1px $tertiary, $input-btn-focus-box-shadow;
+
+$custom-control-indicator-active-color:         $white;
+$custom-control-indicator-active-bg:            lighten($primary, 35%);
+$custom-control-indicator-active-box-shadow:    none;
+
+$custom-checkbox-indicator-border-radius:       2px;
+$custom-checkbox-indicator-icon-checked:        str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 10'%3E%3Cpath fill='#{$custom-control-indicator-checked-color}' d='M4.625 9.625a.777.777 0 0 1-.563.25.777.777 0 0 1-.562-.25L0 6.125 1.125 5l2.938 2.938L11.875.063l1.063 1.125-8.313 8.437z'/%3E%3C/svg%3E"), "#", "%23");
+
+$custom-checkbox-indicator-indeterminate-bg:    $primary;
+$custom-checkbox-indicator-indeterminate-color: $custom-control-indicator-checked-color;
+$custom-checkbox-indicator-icon-indeterminate:  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Cpath stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/%3E%3C/svg%3E"), "#", "%23");
+$custom-checkbox-indicator-indeterminate-box-shadow: none;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-min-width:                10rem;
+$dropdown-padding-y:                .5rem;
+$dropdown-spacer:                   .125rem;
+$dropdown-bg:                       #333;
+$dropdown-border-color:             #3C3C3C;
+$dropdown-border-width:             1px;
+$dropdown-divider-bg:               $gray-200;
+$dropdown-box-shadow:               0 1px 5px 0 rgba($black,.5);
+$dropdown-border-radius:            6px;
+
+$dropdown-link-color:               $white;
+$dropdown-link-hover-color:         $white;
+$dropdown-link-hover-bg:            rgba($white,.05);
+
+$dropdown-link-active-color:        $component-active-color;
+$dropdown-link-active-bg:           $component-active-bg;
+
+$dropdown-link-disabled-color:      $gray-600;
+
+$dropdown-item-padding-y:           .125rem;
+$dropdown-item-padding-x:           1rem;
+
+$dropdown-header-color:             $gray-600;
+
+
+//- Alerts
+//- ----------------------------------------------
+
+$alert-padding-y:             1.25rem;
+$alert-padding-x:             1.25rem;
+$alert-margin-bottom:         1rem;
+$alert-border-radius:         0;
+$alert-link-font-weight:      $font-weight-bold;
+$alert-border-width:          $border-width;
+
+
+//- Pagination
+//- ----------------------------------------------
+
+
+
+
+//- Header
+//- ----------------------------------------------
+$header-height-desktop:           100px;
+$header-height-desktop-mobile:    72px;
+$header-bg-color:                 #151720;
+
+$header-logo-font-family: $font-family-base;
+$header-logo-font-size: 1.125rem;
+$header-logo-font-weight: 700;
+$header-logo-letter-spacing: -0.05em;
+$header-logo-text-transform: uppercase;
+$header-logo-font-color: white;
+$header-logo-padding-y: 20px;
+$header-logo-padding-x: 30px;
+
+$header-tagline-font-family: $font-family-base;
+$header-tagline-font-size: 0.625rem;
+$header-tagline-font-weight: 700;
+$header-tagline-letter-spacing: -0.05em;
+$header-tagline-text-transform: uppercase;
+$header-tagline-font-color: $secondary;
+
+$nav-font-family: $font-family-accent;
+
+// Nav
+$nav-font-family:          $font-family-accent;
+$nav-text-transform:       none;
+$nav-font-weight:          700;
+$nav-font-size:            .875rem;
+$nav-font-color:           #777;
+$nav-font-color-hover:     $light;
+$nav-active-border-size:   2px;
+$nav-active-border-color:  $primary;
+
+// Submenu
+$nav-sub-bg:                #242424;
+$nav-sub-font-family:       $font-family-accent;
+$nav-sub-text-transform:    none;
+$nav-sub-font-weight:       400;
+$nav-sub-font-size:         .8125rem;
+$nav-sub-arrow:             "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='%23777777' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E";
+$nav-sub-border-color:      #242633;
+$nav-sub-hover-bg-color:    transparent;
+$nav-sub-link-color:        $nav-font-color;
+$nav-sub-hover-link-color:  $light;
+$nav-sub-link-border-color: $primary;
+
+
+// Megamenu
+$nav-sub-megamenu-link-color:       rgba(red($secondary), green($secondary), blue($secondary), 0.4);
+$nav-sub-megamenu-link-color-hover: $secondary;
+$nav-sub-megamenu-title-color:      $secondary;
+$nav-sub-megamenu-post-title-color: $secondary;
+
+// Mobile Nav
+$nav-mobile-width: 270px;
+$nav-mobile-bg: $nav-sub-bg;
+$nav-mobile-color: $light;
+$nav-mobile-text-transform: none;
+$nav-mobile-border: rgba(255,255,255,.06);
+$nav-mobile-font-size: .875rem;
+$nav-mobile-sub-bg: $header-bg-color;
+$nav-mobile-sub-color: $light;
+$nav-mobile-sub-font-size: .75rem;
+
+//- Breadcrumbs
+//- ----------------------------------------------
+$breadcrumb-padding-y:          0;
+$breadcrumb-padding-x:          1rem;
+$breadcrumb-item-padding:       .5rem;
+
+$breadcrumb-bg:                 transparent;
+$breadcrumb-divider-color:      rgba(255,255,255,.2);
+$breadcrumb-active-color:       $body-color;
+$breadcrumb-divider:            "—";
+
+$breadcrumb-font-family:        $font-family-accent;
+$breadcrumb-font-size:          0.75rem;
+$breadcrumb-font-weight:        400;
+$breadcrumb-text-transform:     uppercase;
+$breadcrumb-link-color:         #fff;
+
+//- Preloader
+//- ----------------------------------------------
+$preloader-bg: #222430;
+$preloader-size: 32px;
+$preloader-color: $primary;
+$preloader-color-secondary: rgba(255,255,255, 0.15);
+$preloader-spin-duration: 1s;
+
+//- Shop
+//- ----------------------------------------------
+
+// Cart
+$cart-panel-bg:    #222430;
+$cart-panel-color: $light;
+
+// Rating
+$rating-default-color: $info;
+$rating-active-color:  #ffcc00;
+
+// Slick Slider Arrows
+$matches-navigation-slick-arrow: "data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Left_Arrow_Icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' y='0px' width='8px' height='14px' viewBox='0 0 8 14' enable-background='new 0 0 8 14' xml:space='preserve'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23FFFFFF' d='M0,7l6.68-7.009l1.336,1.402L2.672,7l5.344,5.605L6.68,14.008L0,7z '/%3E%3C/svg%3E";
+$matches-navigation-slick-arrow-hover: "data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='utf-8'?%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Left_Arrow_Icon' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' y='0px' width='8px' height='14px' viewBox='0 0 8 14' enable-background='new 0 0 8 14' xml:space='preserve'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' fill='%23A3FF12' d='M0,7l6.68-7.009l1.336,1.402L2.672,7l5.344,5.605L6.68,14.008L0,7z '/%3E%3C/svg%3E";
+
+// Matches
+$matches-standings-wins-color:   $primary;
+$matches-standings-losses-color: $danger;
+
+$msw-default-color: $secondary;
+$msw-red-color:     #ff1c5c;
+$msw-blue-color:    #197aff;
+$msw-cyan-color:    #0fadff;
+$msw-yellow-color:  #ffe373;
+
+
+//- Fonts
+//- ----------------------------------------------
+$footer-bg-color:                 #151720;
+$footer-txt-color:                $body-color-dark;
+$footer-link-color:               $link-color;
+
+//- Fonts
+//- ----------------------------------------------
+
+$fa-font-path: "../vendor/fontawesome/webfonts";
+
+//- Z-index
+//- ----------------------------------------------
+
+$zindex-overlay:       1100;
+$zindex-cart-panel:    1101;
+$zindex-menu-panel:    1102;
+$zindex-search-panel:  1103;
+$zindex-header:        1105;
+$zindex-redeem-o:      1106;
+$zindex-redeem:        1107;
+
+// Grid columns
+//- ----------------------------------------------
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+// Breakpoint for XXL Desktop Styles
+//- ----------------------------------------------
+$xxl-breakpoint: 1920px;
+

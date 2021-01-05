@@ -1,0 +1,32 @@
+//- Matches Table
+//- ----------------------------------------------
+
+.matches-table {
+	margin-bottom: 0;
+	font-weight: $font-weight-bold;
+	line-height: 1;
+	letter-spacing: -.03em;
+	text-transform: uppercase;
+	color: $light;
+
+	tbody {
+		& > tr:first-child td {
+			border-top: none;
+		}
+
+		tr {
+			&:nth-child(odd) {
+				background-color: $dark;
+			}
+
+			&:nth-child(even) {
+				background-color: #13151e;
+			}
+		}
+
+		td {
+			vertical-align: middle;
+			border-color: rgba($secondary, .2);
+		}
+	}
+}

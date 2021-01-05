@@ -1,0 +1,149 @@
+//- World Map
+//- ----------------------------------------------
+
+.world-map {
+	position: relative;
+	display: block;
+	background-size: contain;
+	padding-bottom: 53.2%;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-image: url("../img/dotted-world.svg");
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-size: contain;
+		opacity: .4;
+	}
+
+	img,
+	svg {
+		width: 100%;
+	}
+
+	&-team {
+		position: absolute;
+		margin: 0 0 -10px -10px;
+		padding-bottom: 20px;
+
+		@media (min-width: $xxl-breakpoint) {
+			margin: 0 0 -15px -15px;
+			padding-bottom: 30px;
+		}
+
+		&__anchor {
+			position: absolute;
+			bottom: 0;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background-color: $body-color;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 30px;
+				height: 30px;
+			}
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 8px;
+				height: 8px;
+				margin: -4px 0 0 -4px;
+				border-radius: 50%;
+				background-color: $primary;
+
+				@media (min-width: $xxl-breakpoint) {
+					width: 12px;
+					height: 12px;
+					margin: -6px 0 0 -6px;
+				}
+			}
+
+			.world-map-team--left & {
+				left: 0;
+			}
+
+			.world-map-team--right & {
+				right: 0;
+			}
+		}
+
+		&__logo {
+			width: 22px;
+
+			@media (min-width: $xxl-breakpoint) {
+				width: 32px;
+			}
+
+			.world-map-team--right & {
+				order: 2;
+			}
+		}
+
+		figure {
+			margin-bottom: 0;
+		}
+
+		figure:not(.world-map-team__logo) {
+			display: flex;
+			align-items: center;
+			margin-bottom: 4px;
+		}
+
+		figcaption {
+			text-transform: uppercase;
+			font-weight: $font-weight-bold;
+			letter-spacing: -.03em;
+			line-height: 1;
+		}
+
+		&__name,
+		&__country {
+			.world-map-team--right & {
+				text-align: right;
+			}
+		}
+
+		&__country {
+			font-size: .625rem;
+			color: $secondary;
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: .875rem;
+			}
+		}
+	}
+}
+
+.world-map-team--left {
+	figcaption {
+		margin-left: 8px;
+	}
+}
+
+.world-map-team--right {
+	figcaption {
+		margin-right: 8px;
+	}
+}
+
+// Team One
+.world-map-team--one {
+	bottom: 58%;
+	left: 26%;
+}
+
+// Team Two
+.world-map-team--two {
+	bottom: 25%;
+	right: 12%;
+}

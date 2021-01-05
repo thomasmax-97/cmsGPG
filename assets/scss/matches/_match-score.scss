@@ -1,0 +1,332 @@
+//- Match Score
+//- ----------------------------------------------
+
+// Match Score Item
+.match-score {
+	position: relative;
+	margin-bottom: 30px;
+	font-weight: $font-weight-bold;
+	letter-spacing: -.03em;
+	line-height: 1;
+	text-transform: uppercase;
+	color: $light;
+	background-color: #13151e;
+
+	@media (max-width: 374px) {
+		margin-bottom: 15px;
+	}
+
+	.team-carousel-tabs & {
+		width: 100%;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__body,
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding-left: 14px;
+		padding-right: 14px;
+
+		@include media-breakpoint-up(sm) {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		.top-bar-carousel & {
+			flex-direction: column;
+		}
+
+		&-inner {
+			.top-bar-carousel & {
+				display: flex;
+			}
+		}
+	}
+
+	&__header {
+		font-size: .625rem;
+
+		@include media-breakpoint-up(sm) {
+			font-size: .75rem;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			font-size: 1.25rem;
+		}
+	}
+
+	&__header {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: $dark;
+		border-bottom: 1px solid rgba($secondary, .2);
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 14px;
+			padding-bottom: 14px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			padding-top: 20px;
+			padding-bottom: 18px;
+		}
+	}
+
+	&__body {
+		padding-top: 18px;
+		padding-bottom: 18px;
+		transition: all 500ms ease 450ms;
+
+		@include media-breakpoint-up(sm) {
+			padding-top: 28px;
+			padding-bottom: 28px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			padding-top: 42px;
+			padding-bottom: 42px;
+		}
+	}
+
+	&__competition {
+		color: $secondary;
+	}
+
+	&__footer {
+		padding: 14px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: 991px) {
+			border-top: 1px solid rgba($secondary, .2);
+		}
+
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			justify-content: space-between;
+			padding: 41px 24px 0;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			padding: 62px 40px 0;
+		}
+	}
+
+	&:hover {
+		@include media-breakpoint-up(lg) {
+			.match-score__body {
+				opacity: 0;
+				transform: translateY(-20px);
+				transition-delay: 0ms;
+			}
+
+			.match-score__logo {
+				opacity: 1;
+				transform: translateY(0);
+				transition: all 700ms ease 150ms;
+			}
+		}
+	}
+}
+
+// Matches Scores Navigation
+.matches-scores {
+	&__navigation {
+		@include list-unstyled;
+		max-width: calc(100% - 54px);
+		margin-bottom: 26px;
+
+		@include media-breakpoint-up(sm) {
+			max-width: 50%;
+			margin-bottom: 38px;
+		}
+
+		@include media-breakpoint-up(md) {
+			margin-top: -38px;
+			margin-bottom: 62px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			max-width: 546px;
+			margin-bottom: 69px;
+		}
+
+		@media (min-width: $xxl-breakpoint) {
+			max-width: 880px;
+			margin-top: -9px;
+			margin-bottom: 80px;
+		}
+
+		li {
+			font-family: $font-family-base;
+			font-weight: $font-weight-bold;
+			font-size: 1rem;
+			line-height: 1rem;
+			letter-spacing: -.03em;
+			text-transform: uppercase;
+			color: $light;
+
+			body:not(.cursor-is--active) & {
+				cursor: pointer;
+			}
+
+			@include media-breakpoint-up(sm) {
+				font-size: 1.125rem;
+				line-height: 1.375rem;
+			}
+
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.75rem;
+			}
+
+			span {
+				display: block;
+				padding-bottom: 3px;
+				font-size: .75rem;
+				line-height: 1;
+				color: $secondary;
+				transition: 300ms all ease;
+
+				@include media-breakpoint-up(sm) {
+					font-size: .875rem;
+					line-height: 1.375rem;
+				}
+
+				@media (min-width: $xxl-breakpoint) {
+					padding-bottom: 8px;
+					font-size: 1.25rem;
+				}
+			}
+
+			&:hover,
+			&.active {
+				span {
+					color: $primary;
+				}
+			}
+		}
+
+		// Slick slider
+		&.slick-slider {
+			.slick-arrow {
+				position: absolute;
+				bottom: 6px;
+				padding: 0;
+				border: none;
+				background-color: transparent;
+				font-size: 0;
+				outline: 0;
+				z-index: 1;
+				transition: opacity 300ms ease;
+
+				@media (min-width: $xxl-breakpoint) {
+					bottom: 2px;
+				}
+
+				body:not(.cursor-is--active) & {
+					cursor: pointer;
+				}
+
+				&:before {
+					content: "";
+					display: block;
+					width: 14px;
+					height: 14px;
+					background: url($matches-navigation-slick-arrow) center/contain no-repeat;
+					transition: all 300ms ease;
+
+					@media (min-width: $xxl-breakpoint) {
+						height: 20px;
+					}
+				}
+
+				&:hover {
+					&:before {
+						background: url($matches-navigation-slick-arrow-hover) center/contain no-repeat;
+
+						@media (min-width: $xxl-breakpoint) {
+							height: 20px;
+						}
+					}
+				}
+			}
+
+			.slick-prev {
+				left: calc(100% + 4px);
+			}
+
+			.slick-next {
+				left: calc(100% + 42px);
+				transform: rotate(180deg);
+
+				@media (min-width: $xxl-breakpoint) {
+					left: calc(100% + 82px);
+				}
+			}
+		}
+
+		& ~ .matches-scores {
+			padding-top: 6px;
+		}
+	}
+}
+
+// Match Score Inline
+.match-score-inline {
+	position: relative;
+	margin-bottom: 30px;
+	font-weight: $font-weight-bold;
+	letter-spacing: -.03em;
+	line-height: 1;
+	text-transform: uppercase;
+	color: $light;
+
+	&__body {
+		padding: 23px 24px;
+		transition: all 500ms ease 450ms;
+
+		&-inner {
+			display: flex;
+			justify-content: space-between;
+
+			& + & {
+				margin-top: 8px;
+			}
+		}
+	}
+
+	&__footer {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&:hover {
+		.match-score-inline__body {
+			opacity: 0;
+			transform: translateY(-20px);
+			transition-delay: 0ms;
+		}
+	}
+}
