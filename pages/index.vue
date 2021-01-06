@@ -15,12 +15,12 @@
           <!-- Main Navigation Left -->
           <nav class="main-nav">
               <ul class="main-nav__list">
-                  <li class=""><a href="home.html">Home</a></li>
+                  <li class=""><a href="#">Home</a></li>
                   <li class="">
                       <a href="#">Teams</a>
                       <ul class="main-nav__sub">
                           <li class="">
-                              <a href="#">Team Selections</a>
+                              <a href="#">Team</a>
                               <ul class="main-nav__sub">
                                   <li class=""><a href="team-selection-1.html">Team Selection v1</a></li>
                                   <li class=""><a href="team-selection-2.html">Team Selection v2</a></li>
@@ -76,7 +76,7 @@
               <a href="index.html"><img src="~assets/img/logo.png" srcset="assets/img/logo@2x.png 2x" alt="Necromancers"></a>
           </div>
           <!-- Logo - Image Based / End -->
-
+            
           <!-- Main Navigation Right -->
           <nav class="main-nav">
               <ul class="main-nav__list">
@@ -200,6 +200,15 @@
           <!-- Main Navigation Right / End -->
       </header>
       <!-- Header / End -->
+      <main class="site-content text-center" id="wrapper">
+			
+			<div class="site-content__center">
+				<h1 class="text-white landing-title"><span class="subtitle landing-subtitle">Esports and Streaming</span>Germany Playsgroup</h1>
+				<a href="home.html" class="btn btn-primary btn-lg btn--landing"><span>Start Browsing!</span></a>
+			</div>
+			
+		</main>
+    
 
 <!--      <main class="mb-auto">-->
 
@@ -218,7 +227,13 @@ export default {
 
 <style>
 .gpg-video{
+    position:fixed;
     margin-top: -20px;
+    z-index: -1;
+    width: 100%;
+    height:auto;
+   
+   
 }
 li{
     border: none;
@@ -227,4 +242,20 @@ li{
 .gpg-footer{
     background-color: black;
 }
+@media(min-aspect-ratio: 16/9)
+{
+    .gpg-video{
+        width:100%;
+        height:auto;
+    }
+}
+@media(max-aspect-ratio: 16/9)
+{
+    .gpg-video{
+        width:auto;
+        height:100%;
+    }
+}
+
+
 </style>
