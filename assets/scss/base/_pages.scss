@@ -7,7 +7,7 @@
 
 body {
 	position: relative;
-	overflow: hidden;
+	
 	background-color: $body-bg;
 
 	&.scroll-is--active {
@@ -17,7 +17,7 @@ body {
 	&.site-layout--horizontal {
 		background: url(../img/bg-texture-01.jpg) center/cover no-repeat fixed;
 	}
-}
+} 
 
 //
 // Custom Grid Styles
@@ -41,8 +41,7 @@ body {
 	min-height: 100vh;
 
 	.site-layout--horizontal & {
-		overflow-x: initial;
-		overflow-y: initial;
+		
 		max-height: 100vh;
 
 		@include media-breakpoint-up(lg) {
@@ -52,7 +51,7 @@ body {
 
 	.site-layout--landing & {
 		position: relative;
-		overflow: hidden;
+		
 
 		@include media-breakpoint-up(md) {
 			display: flex;
@@ -125,7 +124,7 @@ body {
 	}
 
 	.preloader-is--active & {
-		overflow: hidden;
+		
 		transform: scale(1.5);
 	}
 
@@ -385,7 +384,7 @@ body {
 	}
 
 	&--default {
-		overflow: hidden;
+		
 		position: relative;
 		padding-bottom: 100%;
 		background-image: url("../img/page-bg-base.jpg");
