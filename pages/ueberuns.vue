@@ -6,18 +6,18 @@
 		<div class="inner-container">
 			<div class="sec-title light col-md-6">
 				<div class="title"></div>
-				<h2>germany Playsgroup <br>
-				<span style="font-size:60px;">Über den verein</span>
+				<h2>Germany Playsgroup <br>
+				<span style="font-size:60px;">Über den Verein</span>
 				</h2>
 				<br></br>
 				<div class="text">
 				<p>Die Germanys-Playsgroup e.V.
 			ist ein Zusammenschluss aus Personen,
-			die in ihrer Freizeit, der Leidenschaft des Gaming´s teilt, sowie der Technik.
+			die in ihrer Freizeit die Leidenschaft des Gaming´s, sowie der Technik teilt.
 			Das Hauptinteresse des Vereins ist es, Personen zu fördern und zu vermitteln.
-			So werden e-Sport Spieler weiter an andere Vereine/Clans vermittelt, um einen Transfermarkt zubilden.
-			Durch die große Vernetzung die bereits seid 2017 besteht, können e-Sports Spieler in ihre Karriere durchstarten.
-			Auch in der Germany-Playsgroup Community ist der e-Sport angekommen, so wurde in der Vergangenheit an mehreren Namenhaften Tunieren der ESL teilgenommen!.					 
+			So werden E-Sport Spieler weiter an andere Vereine/Clans vermittelt, um einen Transfermarkt zu bilden.
+			Durch die große Vernetzung die bereits seit 2017 besteht, können E-Sports Spieler in ihre Karriere durchstarten.
+			Auch in der Germany-Playsgroup Community ist der E-Sport angekommen, so wurde in der Vergangenheit an mehreren namhaften Tunieren der ESL teilgenommen!.					 
 				</p>
 
 				</div>
