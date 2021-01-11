@@ -105,8 +105,5 @@
 
 
 <style>
-body{
-    
-    background-image: url(../assets/img/bg-texture-01.jpg);
-}
+
 </style>

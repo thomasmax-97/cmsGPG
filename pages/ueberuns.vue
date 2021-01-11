@@ -32,12 +32,6 @@
 
 </template>
 <style>
-body{
-	background: url(../assets/img/bg-texture-01.jpg)no-repeat center;
-	background-size: cover;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-	
-}
 .main-bann-section{
 	position: relative;
 	padding: 90px 0px 250px;
